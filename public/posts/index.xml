@@ -1,40 +1,83 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>https://example.org/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <title>Posts on Terminal</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Plaatjes test</title>
-      <link>https://example.org/posts/gek-maar-raar/</link>
+      <link>/posts/gek-maar-raar/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/gek-maar-raar/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://example.org/images/Pasted%20image%2020250207173035.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
+      
+      <guid>/posts/gek-maar-raar/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173035.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173035.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;
+</content>
     </item>
+    
     <item>
       <title>Small step</title>
-      <link>https://example.org/posts/eerste-stap/</link>
+      <link>/posts/eerste-stap/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/eerste-stap/</guid>
-      <description>&lt;p&gt;Kleine stap, maar grote stap&lt;/p&gt;&#xA;&lt;p&gt;Na tig updates, bijna voor elkaar. Nu nog het thema goed krijgen.&lt;/p&gt;</description>
+      
+      <guid>/posts/eerste-stap/</guid>
+      <description>&lt;p&gt;Kleine stap, maar grote stap&lt;/p&gt;
+&lt;p&gt;Na tig updates, bijna voor elkaar. Nu nog het thema goed krijgen.&lt;/p&gt;</description>
+      <content>&lt;p&gt;Kleine stap, maar grote stap&lt;/p&gt;
+&lt;p&gt;Na tig updates, bijna voor elkaar. Nu nog het thema goed krijgen.&lt;/p&gt;
+</content>
     </item>
+    
     <item>
       <title>Test met een plaatje</title>
-      <link>https://example.org/posts/testd/</link>
+      <link>/posts/testd/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/testd/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://example.org/images/Pasted%20image%2020250207173133.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+      
+      <guid>/posts/testd/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173133.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173133.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</content>
     </item>
+    
     <item>
       <title>VPN Promotion</title>
-      <link>https://example.org/posts/vpn-promotion/</link>
+      <link>/posts/vpn-promotion/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://example.org/posts/vpn-promotion/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://example.org/images/Pasted%20image%2020250207173116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Via cashbackxl site klikken naar Private Internet Access (even goed letten op instructies ivm cookies), ik had 2 jaar + 2 maanden voor 51,74&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ik kreeg 47,68 cashback via CashbackXL&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Daarna installeren en locatie op VS zetten&lt;/p&gt;</description>
+      
+      <guid>/posts/vpn-promotion/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Via cashbackxl site klikken naar Private Internet Access (even goed letten op instructies ivm cookies), ik had 2 jaar + 2 maanden voor 51,74&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ik kreeg 47,68 cashback via CashbackXL&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Daarna installeren en locatie op VS zetten&lt;/p&gt;</description>
+      <content>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Via cashbackxl site klikken naar Private Internet Access (even goed letten op instructies ivm cookies), ik had 2 jaar + 2 maanden voor 51,74&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ik kreeg 47,68 cashback via CashbackXL&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Daarna installeren en locatie op VS zetten&lt;/p&gt;
+</content>
     </item>
+    
   </channel>
 </rss>
