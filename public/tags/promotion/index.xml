@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Promotion on Terminal</title>
     <link>/tags/promotion/</link>
     <description>Recent content in Promotion on Terminal</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/promotion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/promotion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VPN Promotion</title>
       <link>/posts/vpn-promotion/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      
       <guid>/posts/vpn-promotion/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/Pasted%20image%2020250207173116.png&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;
@@ -26,21 +26,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Daarna installeren en locatie op VS zetten&lt;/p&gt;</description>
-      <content>&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020250207173116.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Via cashbackxl site klikken naar Private Internet Access (even goed letten op instructies ivm cookies), ik had 2 jaar + 2 maanden voor 51,74&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ik kreeg 47,68 cashback via CashbackXL&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Daarna installeren en locatie op VS zetten&lt;/p&gt;
-</content>
     </item>
-    
   </channel>
 </rss>
