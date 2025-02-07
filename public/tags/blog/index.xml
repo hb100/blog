@@ -16,6 +16,13 @@
       <description>&lt;p&gt;&lt;img src=&#34;https://example.org/images/Pasted%20image%2020250207173035.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Small step</title>
+      <link>https://example.org/posts/eerste-stap/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/eerste-stap/</guid>
+      <description>&lt;p&gt;Kleine stap, maar grote stap&lt;/p&gt;&#xA;&lt;p&gt;Na tig updates, bijna voor elkaar. Nu nog het thema goed krijgen.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Test met een plaatje</title>
       <link>https://example.org/posts/testd/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
