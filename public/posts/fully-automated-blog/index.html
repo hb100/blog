@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>From notes to blog | Terminal</title>
+<meta name="keywords" content="blog">
+<meta name="description" content="Based on NetworkChuck&rsquo;s YT video I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&rsquo;t work for me. Thanks to some help of chatgtp I found the solution.
+Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)">
+<meta name="author" content="">
+<link rel="canonical" href="/posts/fully-automated-blog/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9de45e225101e4f99701d2b68fc6b8a1ef6027928be6391fa15bf7f56326c909.css" integrity="sha256-neReIlEB5PmXAdK2j8a4oe9gJ5KL5jkfoVv39WMmyQk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="/posts/fully-automated-blog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="/posts/fully-automated-blog/">
+  <meta property="og:site_name" content="Terminal">
+  <meta property="og:title" content="From notes to blog">
+  <meta property="og:description" content="Based on NetworkChuck’s YT video I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn’t work for me. Thanks to some help of chatgtp I found the solution.
+Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-07T00:00:00+00:00">
+    <meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="From notes to blog">
+<meta name="twitter:description" content="Based on NetworkChuck&rsquo;s YT video I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&rsquo;t work for me. Thanks to some help of chatgtp I found the solution.
+Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/posts/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "From notes to blog",
+      "item": "/posts/fully-automated-blog/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "From notes to blog",
+  "name": "From notes to blog",
+  "description": "Based on NetworkChuck\u0026rsquo;s YT video I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn\u0026rsquo;t work for me. Thanks to some help of chatgtp I found the solution.\nBecause I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)\n",
+  "keywords": [
+    "blog"
+  ],
+  "articleBody": "Based on NetworkChuck’s YT video I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn’t work for me. Thanks to some help of chatgtp I found the solution.\nBecause I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)\nHope it will help you, have fun!\nObsidian Obsidian is notes application, no opinion about this yet, but I noticed a lot of positive recommendations, so I will try it out for the next 90 days. Go download it: https://obsidian.md/ The Setup Follow the instuctions of Chuck:\nCreate a new folder labelled posts. This is where you will add your blog posts ….that’s all you have to do Actually…wait….find out where your Obsidian directories are. Right click your posts folder and choose show in system explorer You’ll need this directory in upcoming steps. Setting up Hugo Install Hugo Prerequisites Install Git: https://github.com/git-guides/install-git Install Go: https://go.dev/dl/ Install Hugo Link: https://gohugo.io/installation/\nCreate a new site ## Verify Hugo works hugo version ## Create a new site hugo new site websitename cd websitename Download a Hugo Theme Find themes from this link: https://themes.gohugo.io/ follow the theme instructions on how to download. The BEST option is to install as a git submodule ## Initialize a git repository (Make sure you are in your Hugo website directory) git init ## Set global username and email parameters for git git config --global user.name \"Jeroen\" git config --global user.email \"Jeroen@hb100.nl\" ## Install a theme (we are installing the Terminal theme here). Once downloaded it should be in your Hugo themes folder ## Find a theme ---\u003e [https://themes.gohugo.io/](https://themes.gohugo.io/) git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal Adjust Hugo settings Most themes you download will have an example configuration you can use. This is usually the best way to make sure Hugo works well and out of the box. For the Terminal theme, they gave this example config below. We will edit the hugo.toml file to make these changes. —-\u003e nano hugo.toml (Linux/Mac) or notepad hugo.toml (Windows) or code hugo.toml (All platforms) (Which I prefer, just install Visual code) baseurl = \"/\" languageCode = \"en-us\" # Add it only if you keep the theme in the `themes` directory. # Remove it if you use the theme as a remote Hugo Module. theme = \"terminal\" paginate = 5 [params] # dir name of your main content (default is `content/posts`). # the list of set content will show up on your index page (baseurl). contentTypeName = \"posts\" # if you set this to 0, only submenu trigger will be visible showMenuItems = 2 # show selector to switch language showLanguageSelector = false # set theme to full screen width fullWidthTheme = false # center theme with default width centerTheme = false # if your resource directory contains an image called `cover.(jpg|png|webp)`, # then the file will be used as a cover automatically. # With this option you don't have to put the `cover` param in a front-matter. autoCover = true # set post to show the last updated # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated showLastUpdated = false # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author # updatedDatePrefix = \"Updated\" # whether to show a page's estimated reading time # readingTime = false # default # whether to show a table of contents # can be overridden in a page's front-matter # Toc = false # default # set title for the table of contents # can be overridden in a page's front-matter # TocTitle = \"Table of Contents\" # default [params.twitter] # set Twitter handles for Twitter cards # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution # do not include @ creator = \"\" site = \"\" [languages] [languages.en] languageName = \"English\" title = \"Terminal\" [languages.en.params] subtitle = \"A simple, retro theme for Hugo\" owner = \"\" keywords = \"\" copyright = \"\" menuMore = \"Show more\" readMore = \"Read more\" readOtherPosts = \"Read other posts\" newerPosts = \"Newer posts\" olderPosts = \"Older posts\" missingContentMessage = \"Page not found...\" missingBackButtonLabel = \"Back to home page\" minuteReadingTime = \"min read\" words = \"words\" [languages.en.params.logo] logoText = \"Terminal\" logoHomeLink = \"/\" [languages.en.menu] [[languages.en.menu.main]] identifier = \"about\" name = \"About\" url = \"/about\" [[languages.en.menu.main]] identifier = \"showcase\" name = \"Showcase\" url = \"/showcase\" Test Hugo ## Verify Hugo works with your theme by running this command hugo server -t themename Walking Through the Steps NOTE: There is a MEGA SCRIPT later in this blog that will do everything in one go.\nSyncing Obsidian to Hugo I sync my Obsidian files via OneDrive (the location of Vault is in separate map, with this I am able to access my Obsidian anytime, anywhere)\nWindows robocopy \"C:\\Users\\USER\\OneDrive\\MAP\\SUBMAP\\posts\" \"C:\\Users\\USER\\Documents\\YOUR-HUGO-blog\\content\\posts\" /mir Add some frontmatter --- title: blogtitle date: 2024-11-06 draft: false tags: - tag1 - tag2 --- Transfer Images from Obsidian to Hugo This was painful, while inititial everything worked, till I moved the images within Obsidian to generic location. Go to settings and under “Files and links” you can specify the new folder path.\nThis makes is much cleaner to work with Obsidian, but it broke the script of Chuck. Thanks to several trial and errors with lovely chatgtp I managed to create an updated version, see below.\nWindows import os import re import shutil import urllib.parse # For decoding URL-encoded characters # Paths posts_dir = r\"C:\\Users\\jmill\\Documents\\hb100-blog\\content\\posts\" attachments_dir = r\"C:\\Users\\jmill\\OneDrive\\Prive\\hb100\\attachments\" static_images_dir = r\"C:\\Users\\jmill\\Documents\\hb100-blog\\static\\images\" # Ensure the images folder exists os.makedirs(static_images_dir, exist_ok=True) # Regex to find images in Markdown image_regex = re.compile(r'!\\[\\]\\((\\.\\./attachments/([^)]*\\.(?:png|jpg|jpeg|gif)))\\)') # Loop through all markdown files for filename in os.listdir(posts_dir): if filename.endswith(\".md\"): filepath = os.path.join(posts_dir, filename) with open(filepath, \"r\", encoding=\"utf-8\") as file: content = file.read() # Find and replace image paths matches = image_regex.findall(content) for full_match, image_name in matches: # Keep the original filename with %20 in Markdown intact image_name_escaped = image_name # Keep URL-encoded (%20) intact # Decode only for filenames on the filesystem (replace %20 with space) image_name_system = urllib.parse.unquote(image_name) # Path to the original image image_source = os.path.join(attachments_dir, image_name_system) if os.path.exists(image_source): # Path to the new location in Hugo's static folder image_dest = os.path.join(static_images_dir, image_name_system) # Copy the image shutil.copy(image_source, image_dest) # **Fix the Markdown link while preserving correct encoding (%20 stays in the URL!)** new_markdown_link = f\"![](/images/{image_name_escaped})\" content = content.replace(f\"![]({full_match})\", new_markdown_link) else: print(f\"⚠ Image not found: {image_source}\") # Save the updated Markdown file with open(filepath, \"w\", encoding=\"utf-8\") as file: file.write(content) print(\"✅ Markdown files processed and images correctly copied!\") Hugo script/ workflow I use Github and domain setup via cloudflare instead of the named solution of hostinger. For this follow the instructions of https://gohugo.io/hosting-and-deployment/hosting-on-github/ to run script on github e.g. start from step 5:\nStep 5\nCreate a file named hugo.yaml in a directory named .github/workflows.\nmkdir -p .github/workflows code hugo.yaml Step 6\nCopy and paste the YAML below into the file you created. Change the branch name and Hugo version as needed.\n.github/workflows/hugo.yaml\n# Sample workflow for building and deploying a Hugo site to GitHub Pages name: Deploy Hugo site to Pages on: # Runs on pushes targeting the default branch push: branches: - master #I used master as branch, but adapt this to your branche. # Allows you to run this workflow manually from the Actions tab workflow_dispatch: # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages permissions: contents: read pages: write id-token: write # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued. # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete. concurrency: group: \"pages\" cancel-in-progress: false # Default to bash defaults: run: shell: bash jobs: # Build job build: runs-on: ubuntu-latest env: HUGO_VERSION: 0.141.0 steps: - name: Install Hugo CLI run: | wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \\ \u0026\u0026 sudo dpkg -i ${{ runner.temp }}/hugo.deb - name: Install Dart Sass run: sudo snap install dart-sass - name: Checkout uses: actions/checkout@v4 with: submodules: recursive fetch-depth: 0 - name: Setup Pages id: pages uses: actions/configure-pages@v5 - name: Install Node.js dependencies run: \"[[ -f package-lock.json || -f npm-shrinkwrap.json ]] \u0026\u0026 npm ci || true\" - name: Build with Hugo env: HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache HUGO_ENVIRONMENT: production TZ: America/Los_Angeles run: | hugo \\ --gc \\ --minify \\ --baseURL \"${{ steps.pages.outputs.base_url }}/\" - name: Upload artifact uses: actions/upload-pages-artifact@v3 with: path: ./public # Deployment job deploy: environment: name: github-pages url: ${{ steps.deployment.outputs.page_url }} runs-on: ubuntu-latest needs: build steps: - name: Deploy to GitHub Pages id: deployment uses: actions/deploy-pages@v4 Commit and push the change to your GitHub repository.\ngit add -A git commit -m \"Create hugo.yaml\" git push The Mega Script Windows (Powershell) # PowerShell Script for Windows # Set variables for Obsidian to Hugo copy $sourcePath = \"C:\\Users\\path\\to\\obsidian\\posts\" $destinationPath = \"C:\\Users\\path\\to\\hugo\\posts\" # Set Github repo $myrepo = \"git@github.com:USER/repo.git\" # Set error handling $ErrorActionPreference = \"Stop\" Set-StrictMode -Version Latest # Change to the script's directory $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition Set-Location $ScriptDir # Check for required commands $requiredCommands = @('git', 'hugo') # Check for Python command (python or python3) if (Get-Command 'python' -ErrorAction SilentlyContinue) { $pythonCommand = 'python' } elseif (Get-Command 'python3' -ErrorAction SilentlyContinue) { $pythonCommand = 'python3' } else { Write-Error \"Python is not installed or not in PATH.\" exit 1 } foreach ($cmd in $requiredCommands) { if (-not (Get-Command $cmd -ErrorAction SilentlyContinue)) { Write-Error \"$cmd is not installed or not in PATH.\" exit 1 } } # Step 1: Check if Git is initialized, and initialize if necessary if (-not (Test-Path \".git\")) { Write-Host \"Initializing Git repository...\" git init git remote add origin $myrepo } else { Write-Host \"Git repository already initialized.\" $remotes = git remote if (-not ($remotes -contains 'origin')) { Write-Host \"Adding remote origin...\" git remote add origin $myrepo } } # Step 2: Sync posts from Obsidian to Hugo content folder using Robocopy Write-Host \"Syncing posts from Obsidian...\" if (-not (Test-Path $sourcePath)) { Write-Error \"Source path does not exist: $sourcePath\" exit 1 } if (-not (Test-Path $destinationPath)) { Write-Error \"Destination path does not exist: $destinationPath\" exit 1 } # Use Robocopy to mirror the directories $robocopyOptions = @('/MIR', '/Z', '/W:5', '/R:3') $robocopyResult = robocopy $sourcePath $destinationPath @robocopyOptions if ($LASTEXITCODE -ge 8) { Write-Error \"Robocopy failed with exit code $LASTEXITCODE\" exit 1 } # Step 3: Process Markdown files with Python script to handle image links Write-Host \"Processing image links in Markdown files...\" if (-not (Test-Path \"images.py\")) { Write-Error \"Python script images.py not found.\" exit 1 } # Execute the Python script try { \u0026 $pythonCommand images.py } catch { Write-Error \"Failed to process image links.\" exit 1 } # Step 4: Build the Hugo site Write-Host \"Building the Hugo site...\" try { hugo } catch { Write-Error \"Hugo build failed.\" exit 1 } # Step 5: Add changes to Git Write-Host \"Staging changes for Git...\" $hasChanges = (git status --porcelain) -ne \"\" if (-not $hasChanges) { Write-Host \"No changes to stage.\" } else { git add . } # Step 6: Commit changes with a dynamic message $commitMessage = \"New Blog Post on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')\" $hasStagedChanges = (git diff --cached --name-only) -ne \"\" if (-not $hasStagedChanges) { Write-Host \"No changes to commit.\" } else { Write-Host \"Committing changes...\" git commit -m \"$commitMessage\" } # Step 7: Push all changes to the main branch Write-Host \"Deploying to GitHub Master...\" try { git push origin master } catch { Write-Error \"Failed to push to Master branch.\" exit 1 } # Step 8: Push the public folder to the hostinger branch using subtree split and force push Write-Host \"Deploying to GitHub Hostinger...\" # Check if the temporary branch exists and delete it $branchExists = git branch --list \"hostinger-deploy\" if ($branchExists) { git branch -D hostinger-deploy } # Perform subtree split try { git subtree split --prefix public -b hostinger-deploy } catch { Write-Error \"Subtree split failed.\" exit 1 } # Push to hostinger branch with force try { git push origin hostinger-deploy:hostinger --force } catch { Write-Error \"Failed to push to hostinger branch.\" git branch -D hostinger-deploy exit 1 } # Delete the temporary branch git branch -D hostinger-deploy git add -A git commit -m \"Create hugo.yaml\" git push Write-Host \"All done! Site synced, processed, committed, built, and deployed.\" Done!\nFrom now on, just blog in Obsidian. When done, just run the masterscript.\nFor me: open powershell and run \\Documents\\hb100-blog\u003e .\\updateblog.ps1\n",
+  "wordCount" : "2105",
+  "inLanguage": "en",
+  "datePublished": "2025-02-07T00:00:00Z",
+  "dateModified": "2025-02-07T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/posts/fully-automated-blog/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Terminal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Terminal (Alt + H)">Terminal</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="/showcase" title="Showcase">
+                    <span>Showcase</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      From notes to blog
+    </h1>
+    <div class="post-meta"><span title='2025-02-07 00:00:00 +0000 UTC'>February 7, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Based on <a href="https://www.youtube.com/watch?v=dnE7c0ELEH8">NetworkChuck&rsquo;s YT video</a> I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&rsquo;t work for me. Thanks to some help of chatgtp I found the solution.</p>
+<p>Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)</p>
+<p>Hope it will help you, have fun!</p>
+<h2 id="obsidian">Obsidian<a hidden class="anchor" aria-hidden="true" href="#obsidian">#</a></h2>
+<ul>
+<li>Obsidian is notes application, no opinion about this yet, but I noticed a lot of positive recommendations, so I will try it out for the next 90 days. Go download it: <a href="https://obsidian.md/">https://obsidian.md/</a></li>
+</ul>
+<h2 id="the-setup">The Setup<a hidden class="anchor" aria-hidden="true" href="#the-setup">#</a></h2>
+<p>Follow the instuctions of Chuck:</p>
+<ul>
+<li>Create a new folder labelled <em>posts</em>. This is where you will add your blog posts</li>
+<li>….that’s all you have to do</li>
+<li>Actually…wait….find out where your Obsidian directories are. Right click your <em>posts</em> folder and choose <em>show in system explorer</em></li>
+<li>You’ll need this directory in upcoming steps.</li>
+</ul>
+<h1 id="setting-up-hugo">Setting up Hugo<a hidden class="anchor" aria-hidden="true" href="#setting-up-hugo">#</a></h1>
+<h2 id="install-hugo">Install Hugo<a hidden class="anchor" aria-hidden="true" href="#install-hugo">#</a></h2>
+<h3 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h3>
+<ul>
+<li>Install Git: <a href="https://github.com/git-guides/install-git">https://github.com/git-guides/install-git</a></li>
+<li>Install Go: <a href="https://go.dev/dl/">https://go.dev/dl/</a></li>
+</ul>
+<h3 id="install-hugo-1">Install Hugo<a hidden class="anchor" aria-hidden="true" href="#install-hugo-1">#</a></h3>
+<p>Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/</a></p>
+<h3 id="create-a-new-sitehttpsblognetworkchuckcompostsmy-insane-blog-pipelinecreate-a-new-site">Create a new site<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#create-a-new-site"></a><a hidden class="anchor" aria-hidden="true" href="#create-a-new-sitehttpsblognetworkchuckcompostsmy-insane-blog-pipelinecreate-a-new-site">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Verify Hugo works</span>
+</span></span><span style="display:flex;"><span>hugo version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Create a new site </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo new site websitename
+</span></span><span style="display:flex;"><span>cd websitename
+</span></span></code></pre></div><h3 id="download-a-hugo-themehttpsblognetworkchuckcompostsmy-insane-blog-pipelinedownload-a-hugo-theme">Download a Hugo Theme<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#download-a-hugo-theme"></a><a hidden class="anchor" aria-hidden="true" href="#download-a-hugo-themehttpsblognetworkchuckcompostsmy-insane-blog-pipelinedownload-a-hugo-theme">#</a></h3>
+<ul>
+<li>Find themes from this link: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>
+<ul>
+<li><em>follow the theme instructions on how to download. The BEST option is to install as a git submodule</em></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Initialize a git repository (Make sure you are in your Hugo website directory)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Set global username and email parameters for git</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Jeroen&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;Jeroen@hb100.nl&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Install a theme (we are installing the Terminal theme here). Once downloaded it should be in your Hugo themes folder</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Find a theme ---&gt; [https://themes.gohugo.io/](https://themes.gohugo.io/)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+</span></span></code></pre></div><h3 id="adjust-hugo-settingshttpsblognetworkchuckcompostsmy-insane-blog-pipelineadjust-hugo-settings">Adjust Hugo settings<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#adjust-hugo-settings"></a><a hidden class="anchor" aria-hidden="true" href="#adjust-hugo-settingshttpsblognetworkchuckcompostsmy-insane-blog-pipelineadjust-hugo-settings">#</a></h3>
+<ul>
+<li>Most themes you download will have an example configuration you can use. This is usually the best way to make sure Hugo works well and out of the box.</li>
+<li>For the <em>Terminal</em> theme, they gave this example config below.</li>
+<li>We will edit the <em>hugo.toml</em> file to make these changes. —-&gt; <code>nano hugo.toml</code> (Linux/Mac) or <code>notepad hugo.toml</code> (Windows) or <code>code hugo.toml</code> (All platforms) (Which I prefer, just install <a href="https://code.visualstudio.com/download">Visual code</a>)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Add it only if you keep the theme in the `themes` directory.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove it if you use the theme as a remote Hugo Module.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;terminal&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># dir name of your main content (default is `content/posts`).</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># the list of set content will show up on your index page (baseurl).</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contentTypeName</span> = <span style="color:#e6db74">&#34;posts&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># if you set this to 0, only submenu trigger will be visible</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showMenuItems</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># show selector to switch language</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showLanguageSelector</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># set theme to full screen width</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fullWidthTheme</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># center theme with default width</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">centerTheme</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># if your resource directory contains an image called `cover.(jpg|png|webp)`,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># then the file will be used as a cover automatically.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># With this option you don&#39;t have to put the `cover` param in a front-matter.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">autoCover</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># set post to show the last updated</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">showLastUpdated</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># updatedDatePrefix = &#34;Updated&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># whether to show a page&#39;s estimated reading time</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># readingTime = false # default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># whether to show a table of contents</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># can be overridden in a page&#39;s front-matter</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Toc = false # default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># set title for the table of contents</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># can be overridden in a page&#39;s front-matter</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># TocTitle = &#34;Table of Contents&#34; # default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">twitter</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># set Twitter handles for Twitter cards</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># do not include @</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">creator</span> = <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">site</span> = <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">languages</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">languageName</span> = <span style="color:#e6db74">&#34;English&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Terminal&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    [<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>.<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">subtitle</span> = <span style="color:#e6db74">&#34;A simple, retro theme for Hugo&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">owner</span> = <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">keywords</span> = <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">menuMore</span> = <span style="color:#e6db74">&#34;Show more&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">readMore</span> = <span style="color:#e6db74">&#34;Read more&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">readOtherPosts</span> = <span style="color:#e6db74">&#34;Read other posts&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">newerPosts</span> = <span style="color:#e6db74">&#34;Newer posts&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">olderPosts</span> = <span style="color:#e6db74">&#34;Older posts&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">missingContentMessage</span> = <span style="color:#e6db74">&#34;Page not found...&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">missingBackButtonLabel</span> = <span style="color:#e6db74">&#34;Back to home page&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">minuteReadingTime</span> = <span style="color:#e6db74">&#34;min read&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">words</span> = <span style="color:#e6db74">&#34;words&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>.<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">logo</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">logoText</span> = <span style="color:#e6db74">&#34;Terminal&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">logoHomeLink</span> = <span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      [<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>.<span style="color:#a6e22e">menu</span>]
+</span></span><span style="display:flex;"><span>        [[<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>.<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;About&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about&#34;</span>
+</span></span><span style="display:flex;"><span>        [[<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">en</span>.<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">main</span>]]
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;showcase&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Showcase&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/showcase&#34;</span>
+</span></span></code></pre></div><h3 id="test-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinetest-hugo">Test Hugo<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#test-hugo"></a><a hidden class="anchor" aria-hidden="true" href="#test-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinetest-hugo">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Verify Hugo works with your theme by running this command</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo server -t themename
+</span></span></code></pre></div><h1 id="walking-through-the-stepshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewalking-through-the-steps">Walking Through the Steps<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#walking-through-the-steps"></a><a hidden class="anchor" aria-hidden="true" href="#walking-through-the-stepshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewalking-through-the-steps">#</a></h1>
+<p><em>NOTE: There is a MEGA SCRIPT later in this blog that will do everything in one go.</em></p>
+<h2 id="syncing-obsidian-to-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinesyncing-obsidian-to-hugo">Syncing Obsidian to Hugo<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#syncing-obsidian-to-hugo"></a><a hidden class="anchor" aria-hidden="true" href="#syncing-obsidian-to-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinesyncing-obsidian-to-hugo">#</a></h2>
+<p>I sync my Obsidian files via OneDrive (the location of Vault is in separate map, with this I am able to access my Obsidian anytime, anywhere)</p>
+<h3 id="windowshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows">Windows<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows"></a><a hidden class="anchor" aria-hidden="true" href="#windowshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span> robocopy <span style="color:#e6db74">&#34;C:\Users\USER\OneDrive\MAP\SUBMAP\posts&#34;</span> <span style="color:#e6db74">&#34;C:\Users\USER\Documents\YOUR-HUGO-blog\content\posts&#34;</span> /mir
+</span></span></code></pre></div><h2 id="add-some-frontmatterhttpsblognetworkchuckcompostsmy-insane-blog-pipelineadd-some-frontmatter">Add some frontmatter<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#add-some-frontmatter"></a><a hidden class="anchor" aria-hidden="true" href="#add-some-frontmatterhttpsblognetworkchuckcompostsmy-insane-blog-pipelineadd-some-frontmatter">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: blogtitle
+</span></span><span style="display:flex;"><span>date: 2024-11-06
+</span></span><span style="display:flex;"><span>draft: false
+</span></span><span style="display:flex;"><span>tags:
+</span></span><span style="display:flex;"><span>  - tag1
+</span></span><span style="display:flex;"><span>  - tag2
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h2 id="transfer-images-from-obsidian-to-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinetransfer-images-from-obsidian-to-hugo">Transfer Images from Obsidian to Hugo<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#transfer-images-from-obsidian-to-hugo"></a><a hidden class="anchor" aria-hidden="true" href="#transfer-images-from-obsidian-to-hugohttpsblognetworkchuckcompostsmy-insane-blog-pipelinetransfer-images-from-obsidian-to-hugo">#</a></h2>
+<p>This was painful, while inititial everything worked, till I moved the images within Obsidian to generic location. Go to settings and under &ldquo;Files and links&rdquo; you can specify the new folder path.</p>
+<p><img loading="lazy" src="/images/Pasted%20image%2020250207210309.png"></p>
+<p>This makes is much cleaner to work with Obsidian, but it broke the script of Chuck. Thanks to several trial and errors with lovely chatgtp I managed to create an updated version, see below.</p>
+<h3 id="windowshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows-1">Windows<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows-1"></a><a hidden class="anchor" aria-hidden="true" href="#windowshttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> shutil
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.parse  <span style="color:#75715e"># For decoding URL-encoded characters</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Paths</span>
+</span></span><span style="display:flex;"><span>posts_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\jmill\Documents\hb100-blog\content\posts&#34;</span>
+</span></span><span style="display:flex;"><span>attachments_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\jmill\OneDrive\Prive\hb100\attachments&#34;</span>
+</span></span><span style="display:flex;"><span>static_images_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\jmill\Documents\hb100-blog\static\images&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ensure the images folder exists</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>makedirs(static_images_dir, exist_ok<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Regex to find images in Markdown</span>
+</span></span><span style="display:flex;"><span>image_regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;!\[\]\((\.\./attachments/([^)]*\.(?:png|jpg|jpeg|gif)))\)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Loop through all markdown files</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(posts_dir):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.md&#34;</span>):
+</span></span><span style="display:flex;"><span>        filepath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(posts_dir, filename)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Find and replace image paths</span>
+</span></span><span style="display:flex;"><span>        matches <span style="color:#f92672">=</span> image_regex<span style="color:#f92672">.</span>findall(content)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> full_match, image_name <span style="color:#f92672">in</span> matches:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Keep the original filename with %20 in Markdown intact</span>
+</span></span><span style="display:flex;"><span>            image_name_escaped <span style="color:#f92672">=</span> image_name  <span style="color:#75715e"># Keep URL-encoded (%20) intact</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Decode only for filenames on the filesystem (replace %20 with space)</span>
+</span></span><span style="display:flex;"><span>            image_name_system <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>unquote(image_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Path to the original image</span>
+</span></span><span style="display:flex;"><span>            image_source <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(attachments_dir, image_name_system)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(image_source):
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Path to the new location in Hugo&#39;s static folder</span>
+</span></span><span style="display:flex;"><span>                image_dest <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(static_images_dir, image_name_system)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Copy the image</span>
+</span></span><span style="display:flex;"><span>                shutil<span style="color:#f92672">.</span>copy(image_source, image_dest)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># **Fix the Markdown link while preserving correct encoding (%20 stays in the URL!)**</span>
+</span></span><span style="display:flex;"><span>                new_markdown_link <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![](/images/</span><span style="color:#e6db74">{</span>image_name_escaped<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>                content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![](</span><span style="color:#e6db74">{</span>full_match<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>, new_markdown_link)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;⚠ Image not found: </span><span style="color:#e6db74">{</span>image_source<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Save the updated Markdown file</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            file<span style="color:#f92672">.</span>write(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;✅ Markdown files processed and images correctly copied!&#34;</span>)
+</span></span></code></pre></div><h1 id="hugo-script-workflow">Hugo script/ workflow<a hidden class="anchor" aria-hidden="true" href="#hugo-script-workflow">#</a></h1>
+<p>I use Github and domain setup via cloudflare instead of the named solution of hostinger. For this follow the instructions of <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a> to run script on github e.g. start from step 5:</p>
+<p>Step 5</p>
+<p>Create a file named <code>hugo.yaml</code> in a directory named <code>.github/workflows</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mkdir -p .github/workflows
+</span></span><span style="display:flex;"><span>code hugo.yaml
+</span></span></code></pre></div><p>Step 6</p>
+<p>Copy and paste the YAML below into the file you created. Change the branch name and Hugo version as needed.</p>
+<p>.github/workflows/hugo.yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Sample workflow for building and deploying a Hugo site to GitHub Pages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Hugo site to Pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Runs on pushes targeting the default branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">master</span> <span style="color:#75715e">#I used master as branch, but adapt this to your branche.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Allows you to run this workflow manually from the Actions tab</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pages</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">concurrency</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">group</span>: <span style="color:#e6db74">&#34;pages&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">cancel-in-progress</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default to bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaults</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Build job</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">HUGO_VERSION</span>: <span style="color:#ae81ff">0.141.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Hugo CLI</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &amp;&amp; sudo dpkg -i ${{ runner.temp }}/hugo.deb</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Dart Sass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">sudo snap install dart-sass</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">submodules</span>: <span style="color:#ae81ff">recursive</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/configure-pages@v5</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Node.js dependencies</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#e6db74">&#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build with Hugo</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_CACHEDIR</span>: <span style="color:#ae81ff">${{ runner.temp }}/hugo_cache</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">HUGO_ENVIRONMENT</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">TZ</span>: <span style="color:#ae81ff">America/Los_Angeles</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          hugo \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --gc \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --minify \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --baseURL &#34;${{ steps.pages.outputs.base_url }}/&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Upload artifact</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-pages-artifact@v3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">./public</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Deployment job</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">github-pages</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#ae81ff">${{ steps.deployment.outputs.page_url }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy to GitHub Pages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">deployment</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/deploy-pages@v4</span>
+</span></span></code></pre></div><p>Commit and push the change to your GitHub repository.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Create hugo.yaml&#34;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div><h1 id="the-mega-scripthttpsblognetworkchuckcompostsmy-insane-blog-pipelinethe-mega-script">The Mega Script<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#the-mega-script"></a><a hidden class="anchor" aria-hidden="true" href="#the-mega-scripthttpsblognetworkchuckcompostsmy-insane-blog-pipelinethe-mega-script">#</a></h1>
+<h2 id="windows-powershellhttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows-powershell">Windows (Powershell)<a href="https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows-powershell"></a><a hidden class="anchor" aria-hidden="true" href="#windows-powershellhttpsblognetworkchuckcompostsmy-insane-blog-pipelinewindows-powershell">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># PowerShell Script for Windows</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set variables for Obsidian to Hugo copy</span>
+</span></span><span style="display:flex;"><span>$sourcePath = <span style="color:#e6db74">&#34;C:\Users\path\to\obsidian\posts&#34;</span>
+</span></span><span style="display:flex;"><span>$destinationPath = <span style="color:#e6db74">&#34;C:\Users\path\to\hugo\posts&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set Github repo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$myrepo = <span style="color:#e6db74">&#34;git@github.com:USER/repo.git&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set error handling</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ErrorActionPreference = <span style="color:#e6db74">&#34;Stop&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set-StrictMode -Version Latest
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Change to the script&#39;s directory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Set-Location $ScriptDir
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for required commands</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$requiredCommands = @(<span style="color:#e6db74">&#39;git&#39;</span>, <span style="color:#e6db74">&#39;hugo&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check for Python command (python or python3)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (Get-Command <span style="color:#e6db74">&#39;python&#39;</span> -ErrorAction SilentlyContinue) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $pythonCommand = <span style="color:#e6db74">&#39;python&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">elseif</span> (Get-Command <span style="color:#e6db74">&#39;python3&#39;</span> -ErrorAction SilentlyContinue) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $pythonCommand = <span style="color:#e6db74">&#39;python3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Python is not installed or not in PATH.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($cmd <span style="color:#66d9ef">in</span> $requiredCommands) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Get-Command $cmd -ErrorAction SilentlyContinue)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Write-Error <span style="color:#e6db74">&#34;</span>$cmd<span style="color:#e6db74"> is not installed or not in PATH.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Check if Git is initialized, and initialize if necessary</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Test-Path <span style="color:#e6db74">&#34;.git&#34;</span>)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Initializing Git repository...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git remote add origin $myrepo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Git repository already initialized.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $remotes = git remote
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> ($remotes <span style="color:#f92672">-contains</span> <span style="color:#e6db74">&#39;origin&#39;</span>)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Write-Host <span style="color:#e6db74">&#34;Adding remote origin...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        git remote add origin $myrepo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 2: Sync posts from Obsidian to Hugo content folder using Robocopy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Syncing posts from Obsidian...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Test-Path $sourcePath)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Source path does not exist: </span>$sourcePath<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Test-Path $destinationPath)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Destination path does not exist: </span>$destinationPath<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use Robocopy to mirror the directories</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$robocopyOptions = @(<span style="color:#e6db74">&#39;/MIR&#39;</span>, <span style="color:#e6db74">&#39;/Z&#39;</span>, <span style="color:#e6db74">&#39;/W:5&#39;</span>, <span style="color:#e6db74">&#39;/R:3&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$robocopyResult = robocopy $sourcePath $destinationPath @robocopyOptions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($LASTEXITCODE <span style="color:#f92672">-ge</span> <span style="color:#ae81ff">8</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Robocopy failed with exit code </span>$LASTEXITCODE<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 3: Process Markdown files with Python script to handle image links</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Processing image links in Markdown files...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> (Test-Path <span style="color:#e6db74">&#34;images.py&#34;</span>)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Python script images.py not found.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Execute the Python script</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &amp; $pythonCommand images.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Failed to process image links.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 4: Build the Hugo site</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Building the Hugo site...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Hugo build failed.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Add changes to Git</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Staging changes for Git...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$hasChanges = (git status --porcelain) <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $hasChanges) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;No changes to stage.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 6: Commit changes with a dynamic message</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$commitMessage = <span style="color:#e6db74">&#34;New Blog Post on </span>$(Get-Date -Format <span style="color:#e6db74">&#39;yyyy-MM-dd HH:mm:ss&#39;</span>)<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$hasStagedChanges = (git diff --cached --name-only) <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $hasStagedChanges) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;No changes to commit.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Committing changes...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git commit -m <span style="color:#e6db74">&#34;</span>$commitMessage<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 7: Push all changes to the main branch</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Deploying to GitHub Master...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git push origin master
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Failed to push to Master branch.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 8: Push the public folder to the hostinger branch using subtree split and force push</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Deploying to GitHub Hostinger...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the temporary branch exists and delete it</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$branchExists = git branch --list <span style="color:#e6db74">&#34;hostinger-deploy&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($branchExists) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git branch -D hostinger-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Perform subtree split</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git subtree split --prefix public -b hostinger-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Subtree split failed.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push to hostinger branch with force</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git push origin hostinger-deploy<span style="color:#960050;background-color:#1e0010">:</span>hostinger --force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Write-Error <span style="color:#e6db74">&#34;Failed to push to hostinger branch.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    git branch -D hostinger-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Delete the temporary branch</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git branch -D hostinger-deploy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Create hugo.yaml&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git push
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;All done! Site synced, processed, committed, built, and deployed.&#34;</span>
+</span></span></code></pre></div><p>Done!</p>
+<p>From now on, just blog in Obsidian. When done, just run the masterscript.</p>
+<p>For me: open powershell and run \Documents\hb100-blog&gt; .\updateblog.ps1</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/blog/">Blog</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="/">Terminal</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -9,20 +9,20 @@
     <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>From notes to blog</title>
+      <link>/posts/fully-automated-blog/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/fully-automated-blog/</guid>
+      <description>&lt;p&gt;Based on &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&#34;&gt;NetworkChuck&amp;rsquo;s YT video&lt;/a&gt; I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&amp;rsquo;t work for me. Thanks to some help of chatgtp I found the solution.&lt;/p&gt;
+&lt;p&gt;Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp)&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Plaatjes test</title>
       <link>/posts/gek-maar-raar/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
       <guid>/posts/gek-maar-raar/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/Pasted%20image%2020250207173035.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Small step</title>
-      <link>/posts/eerste-stap/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/eerste-stap/</guid>
-      <description>&lt;p&gt;Kleine stap, maar grote stap&lt;/p&gt;
-&lt;p&gt;Na tig updates, bijna voor elkaar. Nu nog het thema goed krijgen.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test met een plaatje</title>
