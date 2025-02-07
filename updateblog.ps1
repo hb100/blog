@@ -1,11 +1,11 @@
 # PowerShell Script for Windows
 
 # Set variables for Obsidian to Hugo copy
-$sourcePath = "C:\Users\jmill\Documents\hb100-blog\content\posts"
+$sourcePath = "C:\Users\jmill\OneDrive\Prive\hb100\posts"
 $destinationPath = "C:\Users\jmill\Documents\hb100-blog\content\posts"
 
 # Set Github repo 
-$myrepo = "blog"
+$myrepo = "git@github.com:hb100/blog.git"
 
 # Set error handling
 $ErrorActionPreference = "Stop"
@@ -151,5 +151,9 @@ try {
 
 # Delete the temporary branch
 git branch -D hostinger-deploy
+
+git add -A
+git commit -m "Create hugo.yaml"
+git push
 
 Write-Host "All done! Site synced, processed, committed, built, and deployed."
