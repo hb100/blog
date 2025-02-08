@@ -1,12 +1,12 @@
 ---
 title: VPN Promotion
-cover: Pasted%20image%2020250207173116.png
 date: 2025-02-07
 draft: false
 tags:
   - blog
   - Promotion
   - vpn
+image:"/images/Pasted%20image%2020250207173116.png"
 ---
 ![](/images/Pasted%20image%2020250207173116.png)
 
