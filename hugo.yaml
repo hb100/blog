@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://blog.hb100.nl/"
 languageCode = "en-us"
 # Add it only if you keep the theme in the `themes` directory.
 # Remove it if you use the theme as a remote Hugo Module.
@@ -56,10 +56,10 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Terminal"
+    title = "hb100-blog"
 
     [languages.en.params]
-      subtitle = "A simple, retro theme for Hugo"
+      subtitle = "My automated blog"
       owner = ""
       keywords = ""
       copyright = ""
@@ -74,7 +74,7 @@ paginate = 5
       words = "words"
 
       [languages.en.params.logo]
-        logoText = "Terminal"
+        logoText = "hb100-blog"
         logoHomeLink = "/"
 
       [languages.en.menu]
