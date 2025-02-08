@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Terminal</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Terminal</description>
+    <title>Posts on hb100-blog</title>
+    <link>https://blog.hb100.nl/posts/</link>
+    <description>Recent content in Posts on hb100-blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.hb100.nl/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From notes to blog</title>
-      <link>/posts/fully-automated-blog/</link>
+      <link>https://blog.hb100.nl/posts/fully-automated-blog/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/fully-automated-blog/</guid>
+      <guid>https://blog.hb100.nl/posts/fully-automated-blog/</guid>
       <description>&lt;p&gt;Based on &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&#34;&gt;NetworkChuck&amp;rsquo;s YT video&lt;/a&gt; I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&amp;rsquo;t work for me. Thanks to some help of chatgtp I found the solution.&lt;/p&gt;
 &lt;p&gt;Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Plaatjes test</title>
-      <link>/posts/gek-maar-raar/</link>
+      <link>https://blog.hb100.nl/posts/gek-maar-raar/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/gek-maar-raar/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/Pasted%20image%2020250207173035.png&#34;&gt;&lt;/p&gt;
+      <guid>https://blog.hb100.nl/posts/gek-maar-raar/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173035.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test met een plaatje</title>
-      <link>/posts/testd/</link>
+      <link>https://blog.hb100.nl/posts/testd/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/testd/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/Pasted%20image%2020250207173133.png&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://blog.hb100.nl/posts/testd/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173133.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>VPN Promotion</title>
-      <link>/posts/vpn-promotion/</link>
+      <link>https://blog.hb100.nl/posts/vpn-promotion/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/vpn-promotion/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/Pasted%20image%2020250207173116.png&#34;&gt;&lt;/p&gt;
+      <guid>https://blog.hb100.nl/posts/vpn-promotion/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173116.png&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Aanmelden CashbackXL via &lt;a href=&#34;https://www.cashbackxl.nl/?share=danielog-9d68&#34;&gt;https://www.cashbackxl.nl/?share=danielog-9d68&lt;/a&gt; (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje)&lt;/p&gt;
