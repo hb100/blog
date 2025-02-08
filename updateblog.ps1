@@ -123,8 +123,8 @@ try {
     exit 1
 }
 
-git add -A
-git commit -m "Create hugo.yaml"
-git push
+# git add -A
+# git commit -m "Create hugo.yaml"
+# git push
 
 Write-Host "All done! Site synced, processed, committed, built, and deployed."

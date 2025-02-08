@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>hb100-blog</title>
-    <link>https://blog.hb100.nl/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on hb100-blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.hb100.nl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to Get a Great Deal on Private Internet Access (with Cashback!)</title>
-      <link>https://blog.hb100.nl/posts/vpn-promotion/</link>
+      <title>How to get a great deal on Private Internet Access (with Cashback!)</title>
+      <link>http://localhost:1313/posts/vpn-promotion/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/vpn-promotion/</guid>
-      <description>&lt;p&gt;Looking for a great VPN deal? Here’s how I got &lt;strong&gt;2 years + 2 months of Private Internet Access (PIA) for just €51.74&lt;/strong&gt;, plus &lt;strong&gt;€47.68 cashback&lt;/strong&gt;—making it an absolute steal. Follow these steps to do the same:&lt;/p&gt;
+      <guid>http://localhost:1313/posts/vpn-promotion/</guid>
+      <description>&lt;p&gt;Looking for a great VPN deal? Here’s how I got &lt;strong&gt;2 years + 2 months of Private Internet Access (PIA) for just €51.74&lt;/strong&gt;, which is &lt;strong&gt;€47.68 cashback&lt;/strong&gt;—making it an absolute steal. Follow these steps to do the same:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Sign up for CashbackXL&lt;/strong&gt; via&lt;a href=&#34;https://www.cashbackxl.nl?share=jeroen-5ebbb3&#34;&gt;https://www.cashbackxl.nl/&lt;/a&gt;. (You should get an extra €2.50 discount through the member referral program.)&lt;/p&gt;
@@ -23,26 +23,11 @@
     </item>
     <item>
       <title>From notes to blog</title>
-      <link>https://blog.hb100.nl/posts/fully-automated-blog/</link>
+      <link>http://localhost:1313/posts/fully-automated-blog/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/fully-automated-blog/</guid>
+      <guid>http://localhost:1313/posts/fully-automated-blog/</guid>
       <description>&lt;p&gt;Based on &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&#34;&gt;NetworkChuck&amp;rsquo;s YT video&lt;/a&gt; I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&amp;rsquo;t work for me. Thanks to some help of chatgtp I found the solution.&lt;/p&gt;
 &lt;p&gt;Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Plaatjes test</title>
-      <link>https://blog.hb100.nl/posts/gek-maar-raar/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/gek-maar-raar/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173035.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Test met een plaatje</title>
-      <link>https://blog.hb100.nl/posts/testd/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/testd/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173133.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

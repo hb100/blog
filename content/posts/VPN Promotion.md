@@ -1,5 +1,5 @@
 ---
-title: How to Get a Great Deal on Private Internet Access (with Cashback!)
+title: How to get a great deal on Private Internet Access (with Cashback!)
 date: 2025-02-08
 draft: false
 tags:
@@ -8,10 +8,10 @@ tags:
   - vpn
 cover:
   image: images/Pasted%20image%2020250207173116.png
-  alt: This is post image
-  caption: This is the caption
+  alt: PIA VPN promotion
+  caption: One of the best VPN deals
 ---
-Looking for a great VPN deal? Here’s how I got **2 years + 2 months of Private Internet Access (PIA) for just €51.74**, plus **€47.68 cashback**—making it an absolute steal. Follow these steps to do the same:
+Looking for a great VPN deal? Here’s how I got **2 years + 2 months of Private Internet Access (PIA) for just €51.74**, which is **€47.68 cashback**—making it an absolute steal. Follow these steps to do the same:
 
 1. **Sign up for CashbackXL** via[https://www.cashbackxl.nl/](https://www.cashbackxl.nl?share=jeroen-5ebbb3). (You should get an extra €2.50 discount through the member referral program.)
    
