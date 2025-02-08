@@ -1,6 +1,6 @@
 ---
 title: VPN Promotion
-cover: images/Pasted%20image%2020250207173116.png
+cover: Pasted%20image%2020250207173116.png
 date: 2025-02-07
 draft: false
 tags:
