@@ -8,8 +8,9 @@ tags:
   - vpn
 cover:
   image: 'images/Pasted%20image%2020250207173116.png'
+  alt: This is post image
+  caption: This is the caption
 ---
-![](/images/Pasted%20image%2020250207173116.png)
 
 1. Aanmelden CashbackXL via https://www.cashbackxl.nl/?share=danielog-9d68 (als het goed is krijg jij dan nóg 2,50 korting via member get member linkje) 
 
