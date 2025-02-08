@@ -6,8 +6,8 @@ tags:
   - blog
   - Promotion
   - vpn
-params:
-  cover:'/images/Pasted%20image%2020250207173116.png'
+cover:
+  image:'/images/Pasted%20image%2020250207173116.png'
 ---
 ![](/images/Pasted%20image%2020250207173116.png)
 
