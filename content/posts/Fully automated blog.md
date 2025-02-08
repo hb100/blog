@@ -7,7 +7,7 @@ tags:
 ---
 Based on [NetworkChuck's YT video](https://www.youtube.com/watch?v=dnE7c0ELEH8) I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn't work for me. Thanks to some help of chatgtp I found the solution. 
 
-Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp) 
+Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp). 
 
 Hope it will help you, have fun!
 
@@ -58,8 +58,8 @@ git init
 
 ## Set global username and email parameters for git
 
-git config --global user.name "Jeroen"
-git config --global user.email "Jeroen@hb100.nl"
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOURNAM@yourdomain.com"
 
 
 ## Install a theme (we are installing the Terminal theme here). Once downloaded it should be in your Hugo themes folder
@@ -273,111 +273,9 @@ print("✅ Markdown files processed and images correctly copied!")
 
 # Hugo script/ workflow
 
-I use Github and domain setup via cloudflare instead of the named solution of hostinger. For this follow the instructions of https://gohugo.io/hosting-and-deployment/hosting-on-github/ to run script on github e.g. start from step 5:
+I use Github and domain setup via cloudflare instead of the named solution of hostinger. For this follow the instructions of https://gohugo.io/hosting-and-deployment/hosting-on-github/ to run script on github.
 
-Step 5
 
-Create a file named `hugo.yaml` in a directory named `.github/workflows`.
-
-```text
-mkdir -p .github/workflows
-code hugo.yaml
-```
-
-Step 6
-
-Copy and paste the YAML below into the file you created. Change the branch name and Hugo version as needed.
-
-.github/workflows/hugo.yaml
-
-```yaml
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
-
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches:
-      - master #I used master as branch, but adapt this to your branche.
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-# Default to bash
-defaults:
-  run:
-    shell: bash
-
-jobs:
-  # Build job
-  build:
-    runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.141.0
-    steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Build with Hugo
-        env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-          HUGO_ENVIRONMENT: production
-          TZ: America/Los_Angeles
-        run: |
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-Commit and push the change to your GitHub repository.
-
-```sh
-git add -A
-git commit -m "Create hugo.yaml"
-git push
-```
 # The Mega Script[](https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#the-mega-script)
 
 ## Windows (Powershell)[](https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows-powershell)
