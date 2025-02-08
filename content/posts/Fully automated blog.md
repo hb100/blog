@@ -9,7 +9,7 @@ cover:
   alt: Fully automated pipeline blog
   caption: Fully automated pipeline blog
 ---
-![](/images/Pasted%20image%2020250208135838.png)Based on [NetworkChuck's YT video](https://www.youtube.com/watch?v=dnE7c0ELEH8) I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn't work for me. Thanks to some help of chatgtp I found the solution. 
+Based on [NetworkChuck's YT video](https://www.youtube.com/watch?v=dnE7c0ELEH8) I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn't work for me. Thanks to some help of chatgtp I found the solution. 
 
 Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp). 
 
