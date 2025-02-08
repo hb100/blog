@@ -218,9 +218,9 @@ import shutil
 import urllib.parse  # For decoding URL-encoded characters
 
 # Paths
-posts_dir = r"C:\Users\jmill\Documents\hb100-blog\content\posts"
-attachments_dir = r"C:\Users\jmill\OneDrive\Prive\hb100\attachments"
-static_images_dir = r"C:\Users\jmill\Documents\hb100-blog\static\images"
+posts_dir = r"C:\Users\USER\Documents\hb100-blog\content\posts"
+attachments_dir = r"C:\Users\USER\OneDrive\FOLDER-Obsidian"
+static_images_dir = r"C:\Users\USER\Documents\hb100-blog\static\images"
 
 # Ensure the images folder exists
 os.makedirs(static_images_dir, exist_ok=True)
