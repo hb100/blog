@@ -4,8 +4,8 @@ date: 2025-02-08
 draft: false
 tags:
   - blog
-  - Promotion
   - vpn
+  - promotion
 cover:
   image: images/Pasted%20image%2020250207173116.png
   alt: PIA VPN promotion
