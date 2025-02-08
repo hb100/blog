@@ -4,6 +4,7 @@ date: 2025-02-07
 draft: false
 tags:
   - blog
+  - howto
 cover:
   image: images/Pasted%20image%2020250208135838.png
   alt: Fully automated pipeline blog
