@@ -7,7 +7,7 @@ tags:
   - Promotion
   - vpn
 cover:
-  image:'/images/Pasted%20image%2020250207173116.png'
+  image: 'images/Pasted%20image%2020250207173116.png'
 ---
 ![](/images/Pasted%20image%2020250207173116.png)
 
