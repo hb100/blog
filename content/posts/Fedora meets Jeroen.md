@@ -14,7 +14,7 @@ cover:
 ---
 # My Experience Switching to Linux (Fedora)
 To start, I was quite happy with Windows, but I’ve become increasingly annoyed by their pushy and sneaky ways of forcing users into their ecosystem. I accidentally activated Co-Pilot, and boy oh boy, how annoying is that? It reminded me of their infamous Clippy.
-![](attachments/Pasted%20image%2020250214144748.png)
+![](/images/Pasted%20image%2020250214144748.png)
 So, when Linux-related videos started popping up in my YouTube recommendations, I thought, "Why not give it a try?"
 
 ## Getting Started with Linux
@@ -34,8 +34,8 @@ For me, **having access to OneDrive is mandatory** since I don’t store any fil
 
 GNOME has a built-in **Online Accounts** feature, which in theory should make setting up OneDrive a breeze. You just click on OneDrive, log in via a browser pop-up, grant access, and voilà!
 
-![](attachments/Pasted%20image%2020250214150041.png)  
-![](attachments/Pasted%20image%2020250214151512.png)
+![](/images/Pasted%20image%2020250214150041.png)  
+![](/images/Pasted%20image%2020250214151512.png)
 
 Of course… it didn’t work for me. I clicked on **Sign in**, and nothing happened. Apparently, this is a known issue. The solution?
 
@@ -49,7 +49,7 @@ Now, you should be able to access your OneDrive files through the **File Explore
 
 But since I use Fedora, things weren’t going my way…
 
-![](attachments/Pasted%20image%2020250214152140.png)
+![](/images/Pasted%20image%2020250214152140.png)
 
 
 This seems to be an issue specifically between **GNOME, Fedora, and Microsoft**.

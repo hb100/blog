@@ -6,7 +6,7 @@ tags:
   - blog
   - howto
 cover:
-  image: attachments/Pasted%20image%2020250208135838.png
+  image: /images/Pasted%20image%2020250208135838.png
   alt: Fully automated pipeline blog
   caption: Fully automated pipeline blog
 ---
