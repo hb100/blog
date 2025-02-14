@@ -41,12 +41,5 @@ So, when Linux-related videos started popping up in my YouTube recommendations, 
       <description>&lt;p&gt;Based on &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&#34;&gt;NetworkChuck&amp;rsquo;s YT video&lt;/a&gt; I got inspired and created my first blog. Fully automated, with the use of Obsidian. Below the adapted instructions. I leave as much as possible in tact, but I am not using hostinger, I just leave the files within github. Also I struggled with the images, while this didn&amp;rsquo;t work for me. Thanks to some help of chatgtp I found the solution.&lt;/p&gt;
 &lt;p&gt;Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp).&lt;/p&gt;</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://blog.hb100.nl/posts/getting-started-with-hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/getting-started-with-hugo/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=hjD9jTi_DQ4&amp;amp;t=1347s&#34;&gt;https://www.youtube.com/watch?v=hjD9jTi_DQ4&amp;t=1347s&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

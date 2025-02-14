@@ -6,7 +6,7 @@ tags:
   - blog
   - howto
 cover:
-  image: images/Pasted%20image%2020250208135838.png
+  image: attachments/Pasted%20image%2020250208135838.png
   alt: Fully automated pipeline blog
   caption: Fully automated pipeline blog
 ---
@@ -15,7 +15,7 @@ Based on [NetworkChuck's YT video](https://www.youtube.com/watch?v=dnE7c0ELEH8) 
 Because I use Windows, I removed the Linux/ Mac instructions, but in general it is the same, except the scripts, which you needs to adapt in that case (use chatgtp). 
 
 Hope it will help you, have fun!
-
+![](/images/Pasted%20image%2020250214205858.png)
 ## Obsidian
 - Obsidian is notes application, no opinion about this yet, but I noticed a lot of positive recommendations, so I will try it out for the next 90 days. Go download it: [https://obsidian.md/](https://obsidian.md/)
 ## The Setup
@@ -211,7 +211,7 @@ tags:
 
 This was painful, while inititial everything worked, till I moved the images within Obsidian to generic location. Go to settings and under "Files and links" you can specify the new folder path.
 
-![](../attachments/Pasted%20image%2020250207210309.png)
+![](/images/Pasted%20image%2020250207210309.png)
 
 This makes is much cleaner to work with Obsidian, but it broke the script of Chuck. Thanks to several trial and errors with lovely chatgtp I managed to create an updated version, see below. 
 ### Windows[](https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows-1)
