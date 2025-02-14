@@ -9,12 +9,10 @@ tags:
   - OneDrive
 cover:
   image: images/Pasted%20image%2020250214162543.png
-  alt: ALT text
-  caption: Title under cover image
+  alt: Fedora
+  caption: Fedora Linux
 ---
 # My Experience Switching to Linux (Fedora)
-![](/images/Pasted%20image%2020250214162543.png)
-
 To start, I was quite happy with Windows, but I’ve become increasingly annoyed by their pushy and sneaky ways of forcing users into their ecosystem. I accidentally activated Co-Pilot, and boy oh boy, how annoying is that? It reminded me of their infamous Clippy.
 ![](attachments/Pasted%20image%2020250214144748.png)
 
