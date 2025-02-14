@@ -6,22 +6,15 @@
     <description>Recent content in Test on hb100-blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 07 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.hb100.nl/tags/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Plaatjes test</title>
+      <title>Crazy test</title>
       <link>https://blog.hb100.nl/posts/gek-maar-raar/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://blog.hb100.nl/posts/gek-maar-raar/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173035.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;hier gaat ie dan plaatje hierboven omdat we happy zijn&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Test met een plaatje</title>
-      <link>https://blog.hb100.nl/posts/testd/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.hb100.nl/posts/testd/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173133.png&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.hb100.nl/images/Pasted%20image%2020250207173035.png&#34;&gt;
+Yes, the script worked!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
