@@ -7,7 +7,7 @@ tags:
   - vpn
   - promotion
 cover:
-  image: attachement/Pasted%20image%2020250207173116.png
+  image: attachements/Pasted%20image%2020250207173116.png
   alt: PIA VPN promotion
   caption: One of the best VPN deals
 ---
