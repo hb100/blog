@@ -8,7 +8,7 @@ tags:
   - Fedora
   - OneDrive
 cover:
-  image: images/Pasted%20image%2020250214162543.png
+  image: /images/Pasted%20image%2020250214162543.png
   alt: Fedora
   caption: Fedora Linux
 ---
