@@ -211,7 +211,7 @@ tags:
 
 This was painful, while inititial everything worked, till I moved the images within Obsidian to generic location. Go to settings and under "Files and links" you can specify the new folder path.
 
-![](/images/Pasted%20image%2020250207210309.png)
+![](../attachments/Pasted%20image%2020250207210309.png)
 
 This makes is much cleaner to work with Obsidian, but it broke the script of Chuck. Thanks to several trial and errors with lovely chatgtp I managed to create an updated version, see below. 
 ### Windows[](https://blog.networkchuck.com/posts/my-insane-blog-pipeline/#windows-1)
