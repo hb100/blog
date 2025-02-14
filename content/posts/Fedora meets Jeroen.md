@@ -1,6 +1,6 @@
 ---
 title: Linux Fedora meets Windows User
-date: 2025-02-08
+date: 2025-02-14
 draft: false
 tags:
   - blog
@@ -15,7 +15,6 @@ cover:
 # My Experience Switching to Linux (Fedora)
 To start, I was quite happy with Windows, but I’ve become increasingly annoyed by their pushy and sneaky ways of forcing users into their ecosystem. I accidentally activated Co-Pilot, and boy oh boy, how annoying is that? It reminded me of their infamous Clippy.
 ![](attachments/Pasted%20image%2020250214144748.png)
-
 So, when Linux-related videos started popping up in my YouTube recommendations, I thought, "Why not give it a try?"
 
 ## Getting Started with Linux
