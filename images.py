@@ -3,24 +3,24 @@ import re
 import shutil
 import urllib.parse
 
-# Paths
+# Paths for posts, attachments, and static images
 posts_dir = r"C:\Users\jmill\Documents\hb100-blog\content\posts"
 attachments_dir = r"C:\Users\jmill\OneDrive\Prive\hb100\attachments"
 static_images_dir = r"C:\Users\jmill\Documents\hb100-blog\static\images"
 
-# Zorg dat de images folder bestaat
+# Ensure the images folder exists
 os.makedirs(static_images_dir, exist_ok=True)
 
-# Regex om afbeeldingen te vinden in de Markdown body (pikt zowel `../attachments/` als `attachments/` op)
+# Regex to find images in the Markdown body (matches both `../attachments/` and `attachments/`)
 image_regex = re.compile(r'!\[.*?\]\((?:\.\./)?attachments/([^)]*\.(?:png|jpg|jpeg|gif))\)')
 
-# Regex om `cover.image` te vinden in de front matter
+# Regex to find `cover.image` in the front matter
 cover_regex = re.compile(r'cover:\s*\n\s*image:\s*(?:\.\./)?attachments/([^)]*\.(?:png|jpg|jpeg|gif))')
 
-# Controleer bestanden in attachments map
-print(f"\n📂 Bestanden in attachments map: {os.listdir(attachments_dir)}")
+# List files in the attachments directory for debugging
+print(f"\n📂 Files in attachments directory: {os.listdir(attachments_dir)}")
 
-# Loop door alle Markdown bestanden
+# Iterate through all Markdown files
 for filename in os.listdir(posts_dir):
     if filename.endswith(".md"):
         filepath = os.path.join(posts_dir, filename)
@@ -28,71 +28,72 @@ for filename in os.listdir(posts_dir):
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
 
-        # Zoek afbeeldingen in de body van de Markdown
+        # Find all images in the Markdown body
         matches = image_regex.findall(content)
-        print(f"\n🔍 Gevonden afbeeldingen in {filename}: {matches}")
+        print(f"\n🔍 Found images in {filename}: {matches}")
 
-        # Zoek afbeelding in de `cover.image`
+        # Find cover image in the front matter
         cover_match = cover_regex.search(content)
         cover_image = cover_match.group(1) if cover_match else None
         if cover_image:
-            print(f"🖼️ Cover afbeelding gevonden: {cover_image}")
+            print(f"🖼️ Found cover image: {cover_image}")
 
-        # Verwerk reguliere afbeeldingen
+        # Process images in the Markdown body
         for image_name in matches:
-            print(f"\n🌐 Bestandsnaam uit Markdown: {image_name}")
+            print(f"\n🌐 Image filename in Markdown: {image_name}")
 
-            # Decodeer de bestandsnaam voor het besturingssysteem
+            # Decode the filename for the operating system
             image_name_system = urllib.parse.unquote(image_name)
-            print(f"📝 Decoded bestandsnaam voor OS: {image_name_system}")
+            print(f"📝 Decoded filename for OS: {image_name_system}")
 
-            # Pad naar de originele afbeelding in attachments
+            # Define source and destination paths
             image_source = os.path.join(attachments_dir, image_name_system)
-
-            # Pad naar de nieuwe locatie in Hugo's static folder
             image_dest = os.path.join(static_images_dir, image_name_system)
 
-            # Controleer of het bestand nog in attachments staat en kopieer indien nodig
+            # Copy the image if it still exists in attachments
             if os.path.exists(image_source):
-                print(f"✅ Bestand gevonden in attachments: {image_source}")
+                print(f"✅ Image found in attachments: {image_source}")
 
                 try:
                     shutil.copy2(image_source, image_dest)
-                    print(f"📂 Gekopieerd naar: {image_dest}")
+                    print(f"📂 Copied to: {image_dest}")
                 except Exception as e:
-                    print(f"❌ Fout bij kopiëren: {e}")
+                    print(f"❌ Error copying image: {e}")
             else:
-                print(f"⚠ Bestand niet gevonden in attachments: {image_source}")
+                print(f"⚠ Image not found in attachments: {image_source}")
 
-            # Update Markdown met de juiste /images/ verwijzing
+            # Update Markdown to reference the correct /images/ path
             new_markdown_link = f"![](/images/{image_name})"
             content = re.sub(rf'!\[.*?\]\((?:\.\./)?attachments/{re.escape(image_name)}\)', new_markdown_link, content)
-            print(f"📝 Markdown-link bijgewerkt naar: {new_markdown_link}")
+            print(f"📝 Updated Markdown link to: {new_markdown_link}")
 
-        # Verwerk de cover afbeelding, als die er is
+        # Process the cover image if it exists
         if cover_image:
             cover_image_system = urllib.parse.unquote(cover_image)
             cover_source = os.path.join(attachments_dir, cover_image_system)
             cover_dest = os.path.join(static_images_dir, cover_image_system)
 
             if os.path.exists(cover_source):
-                print(f"✅ Cover bestand gevonden: {cover_source}")
+                print(f"✅ Cover image found: {cover_source}")
 
                 try:
                     shutil.copy2(cover_source, cover_dest)
-                    print(f"📂 Cover gekopieerd naar: {cover_dest}")
+                    print(f"📂 Cover image copied to: {cover_dest}")
                 except Exception as e:
-                    print(f"❌ Fout bij kopiëren van cover: {e}")
+                    print(f"❌ Error copying cover image: {e}")
             else:
-                print(f"⚠ Cover bestand niet gevonden: {cover_source}")
+                print(f"⚠ Cover image not found: {cover_source}")
 
-            # Update de cover.image verwijzing in front matter
-            new_cover_line = f"cover:\n  image: /images/{cover_image}"
-            content = re.sub(r'cover:\s*\n\s*image:\s*(?:\.\./)?attachments/.*', new_cover_line, content)
-            print(f"📝 Cover afbeelding aangepast naar: {new_cover_line}")
+            # Ensure the `cover.image` reference in front matter is correctly updated
+            content = re.sub(
+                rf'cover:\s*\n\s*image:\s*(?:\.\./)?attachments/{re.escape(cover_image)}',
+                f'cover:\n  image: /images/{cover_image}',
+                content
+            )
+            print(f"📝 Updated cover image reference to: /images/{cover_image}")
 
-        # Markdown bestand opslaan met updates
+        # Save the updated Markdown file
         with open(filepath, "w", encoding="utf-8") as file:
             file.write(content)
 
-print("\n✅ Markdown bestanden verwerkt, inclusief cover-afbeeldingen!")
+print("\n✅ Markdown files processed, including cover images!")
