@@ -1,0 +1,66 @@
+---
+interface Props {
+  gegevens?: { doel?: string; tools?: string; tijd?: string; kosten?: string };
+}
+const { gegevens } = Astro.props;
+const rijen = [
+  { label: 'Doel', waarde: gegevens?.doel },
+  { label: 'Tools', waarde: gegevens?.tools },
+  { label: 'Tijd', waarde: gegevens?.tijd },
+  { label: 'Kosten', waarde: gegevens?.kosten },
+].filter((rij) => rij.waarde);
+---
+
+{rijen.length > 0 && (
+  <section class="in-het-kort" aria-labelledby="in-het-kort-titel">
+    <h2 id="in-het-kort-titel" class="in-het-kort__titel">In het kort</h2>
+    <dl>
+      {rijen.map((rij) => (
+        <div class="in-het-kort__rij">
+          <dt>{rij.label}</dt>
+          <dd>{rij.waarde}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+)}
+
+<style>
+  .in-het-kort {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    padding: 20px;
+  }
+
+  .in-het-kort__titel {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding-bottom: 12px;
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  .in-het-kort__rij {
+    border-top: 1px solid var(--color-line);
+    padding-block: 12px;
+  }
+
+  .in-het-kort__rij:last-child {
+    padding-bottom: 0;
+  }
+
+  dt {
+    font-size: var(--text-meta);
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  dd {
+    margin: 4px 0 0;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+</style>

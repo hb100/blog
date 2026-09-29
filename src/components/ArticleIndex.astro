@@ -1,0 +1,76 @@
+---
+import ArticleList from './ArticleList.astro';
+import { onderwerpen, type Onderwerp } from '../lib/onderwerpen';
+import type { Artikel } from '../lib/artikelen';
+
+interface Props {
+  artikelen: Artikel[];
+  actief?: Onderwerp;
+}
+const { artikelen, actief } = Astro.props;
+---
+
+<nav class="filter" aria-label="Filter op onderwerp">
+  <ul>
+    <li><a href="/artikelen/" aria-current={!actief ? 'page' : undefined}>Alle</a></li>
+    {onderwerpen.map((o) => (
+      <li>
+        <a href={`/onderwerpen/${o.slug}/`} aria-current={actief === o.naam ? 'page' : undefined}>{o.naam}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<p class="meta aantal">{artikelen.length} {artikelen.length === 1 ? 'artikel' : 'artikelen'}</p>
+
+{artikelen.length > 0 ? (
+  <ArticleList artikelen={artikelen} metLeestijd />
+) : (
+  <p class="leeg">Over dit onderwerp staat nog niets online. Binnenkort meer.</p>
+)}
+
+<style>
+  .filter ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-line);
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .filter a:hover {
+    background: var(--color-surface);
+    color: var(--color-ink);
+  }
+
+  .filter a[aria-current='page'] {
+    background: var(--color-teal-soft);
+    border-color: var(--color-teal-soft);
+    color: var(--color-teal-ink);
+  }
+
+  .aantal {
+    margin: 32px 0 8px;
+  }
+
+  .leeg {
+    padding-block: 24px;
+    border-top: 1px solid var(--color-line);
+    color: var(--color-muted);
+  }
+</style>

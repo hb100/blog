@@ -1,0 +1,160 @@
+---
+import type { MarkdownHeading } from 'astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  koppen: MarkdownHeading[];
+  soort: 'mobiel' | 'desktop';
+}
+const { soort } = Astro.props;
+const koppen = Astro.props.koppen.filter((kop) => kop.depth === 2);
+---
+
+{koppen.length > 1 && soort === 'mobiel' && (
+    <details class="toc toc--mobiel">
+      <summary>
+        Op deze pagina
+        <Icon name="chevron" size={20} />
+      </summary>
+      <ol>
+        {koppen.map((kop) => <li><a href={`#${kop.slug}`}>{kop.text}</a></li>)}
+      </ol>
+    </details>
+)}
+
+{koppen.length > 1 && soort === 'desktop' && (
+    <nav class="toc toc--desktop" aria-labelledby="toc-titel">
+      <p id="toc-titel" class="meta-label">Op deze pagina</p>
+      <ol>
+        {koppen.map((kop) => <li><a href={`#${kop.slug}`}>{kop.text}</a></li>)}
+      </ol>
+    </nav>
+)}
+
+<script>
+  // Markeer in de inhoudsopgave op desktop welk deel je nu leest.
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.toc--desktop a')];
+  const koppen = links
+    .map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))))
+    .filter((kop): kop is HTMLElement => kop !== null);
+
+  if (links.length && 'IntersectionObserver' in window) {
+    const zichtbaar = new Set<Element>();
+    const bijwerken = () => {
+      const huidig = koppen.find((kop) => zichtbaar.has(kop)) ?? null;
+      if (!huidig) return;
+      links.forEach((link) => {
+        const actief = link.hash.slice(1) === huidig.id;
+        link.toggleAttribute('data-actief', actief);
+        if (actief) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    const observer = new IntersectionObserver(
+      (items) => {
+        items.forEach((item) => (item.isIntersecting ? zichtbaar.add(item.target) : zichtbaar.delete(item.target)));
+        bijwerken();
+      },
+      { rootMargin: '0px 0px -70% 0px' },
+    );
+    koppen.forEach((kop) => observer.observe(kop));
+  }
+</script>
+
+<style>
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--color-muted);
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1.4;
+  }
+
+  .toc a:hover {
+    color: var(--color-cobalt-hover);
+    text-decoration: underline;
+  }
+
+  /* Mobiel: uitklapbaar */
+  .toc--mobiel {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-input);
+    background: var(--color-canvas);
+  }
+
+  .toc--mobiel summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 16px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    border-radius: var(--radius-input);
+  }
+
+  .toc--mobiel summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc--mobiel summary :global(svg) {
+    transition: transform 0.15s ease;
+  }
+
+  .toc--mobiel[open] summary :global(svg) {
+    transform: rotate(180deg);
+  }
+
+  .toc--mobiel ol {
+    padding: 0 16px 12px;
+  }
+
+  .toc--mobiel a {
+    padding: 10px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-line);
+  }
+
+  /* Desktop: vaste kolom links naast de tekst */
+  .toc--desktop {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .toc--mobiel {
+      display: none;
+    }
+
+    .toc--desktop {
+      display: block;
+      position: sticky;
+      top: 32px;
+    }
+
+    .toc--desktop ol {
+      margin-top: 12px;
+      border-left: 1px solid var(--color-line);
+    }
+
+    .toc--desktop a {
+      font-size: 15px;
+      padding: 8px 0 8px 12px;
+      margin-left: -1px;
+      border-left: 2px solid transparent;
+    }
+
+    .toc--desktop a[data-actief] {
+      color: var(--color-ink);
+      border-left-color: var(--color-cobalt);
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+import { onderwerpUrl, type Onderwerp } from '../lib/onderwerpen';
+
+interface Props {
+  onderwerp: Onderwerp;
+  link?: boolean;
+  klein?: boolean;
+}
+const { onderwerp, link = false, klein = false } = Astro.props;
+---
+
+{link ? (
+  <a class:list={['tag', klein && 'tag--small']} href={onderwerpUrl(onderwerp)}>{onderwerp}</a>
+) : (
+  <span class:list={['tag', klein && 'tag--small']}>{onderwerp}</span>
+)}

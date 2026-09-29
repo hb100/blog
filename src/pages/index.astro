@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ArticleList from '../components/ArticleList.astro';
+import TopicCards from '../components/TopicCards.astro';
+import AboutBlock from '../components/AboutBlock.astro';
+import { alleArtikelen, artikelUrl, uitgelicht } from '../lib/artikelen';
+import { homeInstellingen, siteInstellingen } from '../lib/instellingen';
+
+const artikelen = await alleArtikelen();
+const home = await homeInstellingen();
+const site = await siteInstellingen();
+const featured = uitgelicht(artikelen);
+// De nieuwste drie, zonder het uitgelichte artikel. Zijn er nog weinig artikelen, dan mag het uitgelichte er ook in.
+const zonderUitgelicht = artikelen.filter((a) => a.id !== featured?.id);
+const nieuwste = (zonderUitgelicht.length >= 3 ? zonderUitgelicht : artikelen).slice(0, 3);
+const eersteNieuwe = artikelen[0];
+---
+
+<BaseLayout description={home.intro ?? site.tagline}>
+  <div class="container">
+    <section class="hero" aria-labelledby="hero-titel">
+      <div class="hero__tekst">
+        {home.label && <p class="meta-label">{home.label}</p>}
+        <h1 id="hero-titel">{home.titel}</h1>
+        {home.intro && <p class="intro">{home.intro}</p>}
+        <div class="hero__acties">
+          {eersteNieuwe && <a class="button" href={artikelUrl(eersteNieuwe)}>{home.knopTekst ?? 'Lees de nieuwste'}</a>}
+          <a class="text-link" href="/over-mij/">Over mij</a>
+        </div>
+      </div>
+
+      {featured && (
+        <div class="hero__uitgelicht">
+          <h2 class="meta-label hero__label">Uitgelicht</h2>
+          <ArticleCard artikel={featured} groot eager />
+        </div>
+      )}
+    </section>
+
+    <section class="section" aria-labelledby="onderwerpen-titel">
+      <h2 id="onderwerpen-titel" class="meta-label">Onderwerpen</h2>
+      <TopicCards />
+    </section>
+
+    {nieuwste.length > 0 && (
+      <section class="section nieuwste" aria-labelledby="nieuwste-titel">
+        <div class="nieuwste__kop">
+          <h2 id="nieuwste-titel">Nieuwste artikelen</h2>
+          <a class="text-link nieuwste__alle nieuwste__alle--boven" href="/artikelen/">Alle artikelen</a>
+        </div>
+        <div class="nieuwste__lijst">
+          <ArticleList artikelen={nieuwste} />
+        </div>
+        <ul class="nieuwste__kaarten">
+          {nieuwste.map((artikel) => <li><ArticleCard artikel={artikel} /></li>)}
+        </ul>
+        <a class="text-link nieuwste__alle nieuwste__alle--onder" href="/artikelen/">Alle artikelen</a>
+      </section>
+    )}
+
+    <div class="section">
+      <AboutBlock />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-top: 40px;
+    display: grid;
+    gap: 40px;
+  }
+
+  .hero__tekst h1 {
+    margin-top: 12px;
+  }
+
+  .hero__tekst .intro {
+    margin-top: 20px;
+    max-width: 34em;
+  }
+
+  .hero__acties {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+  }
+
+  .hero__label {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      padding-top: 72px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .hero__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+  }
+
+  /* Nieuwste artikelen: mobiel een lijst, desktop kaarten */
+  .nieuwste__kop {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .nieuwste__kop h2 {
+    font-size: var(--text-meta);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .nieuwste__alle--boven,
+  .nieuwste__kaarten {
+    display: none;
+  }
+
+  .nieuwste__alle--onder {
+    margin-top: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .nieuwste__kop {
+      margin-bottom: 24px;
+    }
+
+    .nieuwste__kop h2 {
+      font-size: var(--text-h2);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      text-transform: none;
+      color: var(--color-ink);
+    }
+
+    .nieuwste__alle--boven {
+      display: inline-flex;
+    }
+
+    .nieuwste__alle--onder,
+    .nieuwste__lijst {
+      display: none;
+    }
+
+    .nieuwste__kaarten {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nieuwste__kaarten {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

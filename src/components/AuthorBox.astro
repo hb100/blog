@@ -1,0 +1,38 @@
+---
+import Avatar from './Avatar.astro';
+import { siteInstellingen } from '../lib/instellingen';
+const site = await siteInstellingen();
+---
+
+<aside class="auteur" aria-label="Over de auteur">
+  <Avatar foto={site.foto} naam={site.naam} grootte={56} />
+  <div>
+    <p class="auteur__naam"><a href="/over-mij/">{site.naam}</a></p>
+    {site.korteBio && <p class="auteur__bio">{site.korteBio}</p>}
+  </div>
+</aside>
+
+<style>
+  .auteur {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-block: 24px;
+    border-block: 1px solid var(--color-line);
+  }
+
+  .auteur__naam a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .auteur__naam a:hover {
+    color: var(--color-cobalt-hover);
+    text-decoration: underline;
+  }
+
+  .auteur__bio {
+    color: var(--color-muted);
+    margin-top: 2px;
+  }
+</style>

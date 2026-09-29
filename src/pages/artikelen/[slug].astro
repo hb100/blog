@@ -1,0 +1,212 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoverImage from '../../components/CoverImage.astro';
+import TopicTag from '../../components/TopicTag.astro';
+import InHetKort from '../../components/InHetKort.astro';
+import Toc from '../../components/Toc.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import ArticleList from '../../components/ArticleList.astro';
+import { alleArtikelen, datumTekst, gerelateerd, leestijdTekst, type Artikel } from '../../lib/artikelen';
+
+export async function getStaticPaths() {
+  const artikelen = await alleArtikelen();
+  return artikelen.map((artikel) => ({
+    params: { slug: artikel.id },
+    props: { artikel, lees: gerelateerd(artikel, artikelen) },
+  }));
+}
+
+const { artikel, lees } = Astro.props as { artikel: Artikel; lees: Artikel[] };
+const { Content, headings } = await render(artikel);
+const { title, description, date, topics, cover, coverAlt, inHetKort, watIkLeerde } = artikel.data;
+---
+
+<BaseLayout title={title} description={description} image={cover} imageAlt={coverAlt} type="article" publishedTime={date}>
+  <article class="container artikel">
+    <header class="artikel__kop">
+      <ul class="tags" aria-label="Onderwerpen">
+        {topics.map((t) => <li><TopicTag onderwerp={t} link /></li>)}
+      </ul>
+      <h1>{title}</h1>
+      <p class="intro">{description}</p>
+      <p class="meta">
+        <time datetime={date.toISOString()}>{datumTekst(date)}</time> · {leestijdTekst(artikel)}
+      </p>
+    </header>
+
+    {cover && (
+      <CoverImage
+        class="artikel__cover"
+        image={cover}
+        alt={coverAlt}
+        widths={[640, 960, 1280, 1920]}
+        sizes="(min-width: 1216px) 1120px, calc(100vw - 48px)"
+        loading="eager"
+      />
+    )}
+
+    <div class="artikel__raster">
+      <div class="artikel__zijkant">
+        <Toc koppen={headings} soort="desktop" />
+      </div>
+
+      <div class="artikel__tekst">
+        <InHetKort gegevens={inHetKort} />
+        <div class="artikel__toc-mobiel"><Toc koppen={headings} soort="mobiel" /></div>
+
+        <div class="prose">
+          <Content />
+          {watIkLeerde && (
+            <aside class="wat-ik-leerde" aria-label="Wat ik leerde">
+              <p class="wat-ik-leerde__label">Wat ik leerde</p>
+              <p>{watIkLeerde}</p>
+            </aside>
+          )}
+        </div>
+
+        <AuthorBox />
+
+        {lees.length > 0 && (
+          <section class="lees-ook" aria-labelledby="lees-ook-titel">
+            <h2 id="lees-ook-titel">Lees ook</h2>
+            <div class="lees-ook__lijst"><ArticleList artikelen={lees} /></div>
+            <ul class="lees-ook__kaarten">
+              {lees.map((a) => <li><ArticleCard artikel={a} /></li>)}
+            </ul>
+          </section>
+        )}
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .artikel {
+    padding-top: 32px;
+  }
+
+  .artikel__kop {
+    max-width: var(--max-prose);
+  }
+
+  .artikel__kop h1 {
+    margin-top: 16px;
+    font-size: clamp(34px, 3.5vw + 1rem, 48px);
+  }
+
+  .artikel__kop .intro {
+    margin-top: 16px;
+  }
+
+  .artikel__kop .meta {
+    margin-top: 16px;
+  }
+
+  .artikel :global(.artikel__cover) {
+    margin-top: 32px;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .artikel :global(.artikel__cover) {
+      aspect-ratio: 7 / 3;
+    }
+  }
+
+  .artikel__raster {
+    margin-top: 32px;
+  }
+
+  .artikel__zijkant {
+    display: none;
+  }
+
+  .artikel__tekst {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: var(--max-prose);
+    min-width: 0;
+  }
+
+  .artikel__tekst > .prose {
+    margin-top: 8px;
+  }
+
+  .artikel__tekst > .prose > :global(:first-child) {
+    margin-top: 0;
+  }
+
+  .artikel :global(.auteur) {
+    margin-top: 24px;
+  }
+
+  .lees-ook h2 {
+    font-size: var(--text-meta);
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 8px;
+  }
+
+  .lees-ook__kaarten {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .lees-ook h2 {
+      font-size: var(--text-h3);
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--color-ink);
+      margin-bottom: 20px;
+    }
+
+    .lees-ook__lijst {
+      display: none;
+    }
+
+    .lees-ook__kaarten {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .artikel {
+      padding-top: 56px;
+    }
+
+    .artikel__kop,
+    .artikel__raster {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(0, var(--max-prose));
+      column-gap: clamp(40px, 5vw, 80px);
+      max-width: none;
+    }
+
+    .artikel__kop > * {
+      grid-column: 2;
+    }
+
+    .artikel__raster {
+      margin-top: 40px;
+    }
+
+    .artikel__zijkant {
+      display: block;
+    }
+
+    .artikel__toc-mobiel {
+      display: none;
+    }
+  }
+</style>

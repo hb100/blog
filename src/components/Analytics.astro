@@ -1,0 +1,12 @@
+---
+// Plek voor analytics. Aanzetten doe je in src/config.ts.
+import { ANALYTICS } from '../config';
+const { aanbieder, domein, websiteId, script } = ANALYTICS;
+---
+
+{aanbieder === 'plausible' && domein && (
+  <script is:inline defer data-domain={domein} src={script || 'https://plausible.io/js/script.js'}></script>
+)}
+{aanbieder === 'umami' && websiteId && script && (
+  <script is:inline defer data-website-id={websiteId} src={script}></script>
+)}

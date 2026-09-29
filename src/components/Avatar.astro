@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  foto?: ImageMetadata;
+  naam: string;
+  grootte: number;
+}
+const { foto, naam, grootte } = Astro.props;
+const initiaal = naam.replace(/[^\p{L}]/gu, '').charAt(0).toUpperCase() || '?';
+---
+
+{foto ? (
+  <Image class="avatar" src={foto} alt="" width={grootte} height={grootte} densities={[1, 2]} style={`--grootte:${grootte}px`} />
+) : (
+  <span class="avatar avatar--leeg" aria-hidden="true" style={`--grootte:${grootte}px`}>{initiaal}</span>
+)}
+
+<style>
+  .avatar {
+    width: var(--grootte);
+    height: var(--grootte);
+    border-radius: 50%;
+    object-fit: cover;
+    flex: none;
+    background: var(--color-surface-2);
+  }
+
+  .avatar--leeg {
+    display: inline-grid;
+    place-items: center;
+    color: var(--color-cobalt-ink);
+    font-weight: 600;
+    font-size: calc(var(--grootte) * 0.4);
+  }
+</style>

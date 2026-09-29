@@ -1,0 +1,117 @@
+---
+import CoverImage from './CoverImage.astro';
+import TopicTag from './TopicTag.astro';
+import Icon from './Icon.astro';
+import { artikelUrl, leestijdTekst, type Artikel } from '../lib/artikelen';
+
+interface Props {
+  artikel: Artikel;
+  groot?: boolean;
+  kopNiveau?: 'h2' | 'h3';
+  eager?: boolean;
+}
+
+const { artikel, groot = false, kopNiveau = 'h3', eager = false } = Astro.props;
+const Kop = kopNiveau;
+const { title, description, topics, cover, coverAlt } = artikel.data;
+---
+
+<article class:list={['kaart', groot && 'kaart--groot']}>
+  <CoverImage
+    image={cover}
+    alt={coverAlt}
+    widths={[400, 640, 960]}
+    sizes={groot ? '(min-width: 1024px) 520px, 100vw' : '(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw'}
+    loading={eager ? 'eager' : 'lazy'}
+  />
+  <div class="kaart__inhoud">
+    <p class="kaart__meta">
+      <TopicTag onderwerp={topics[0]} klein />
+      <span class="meta">{leestijdTekst(artikel)}</span>
+    </p>
+    <Kop class="kaart__titel">
+      <a href={artikelUrl(artikel)}>{title}</a>
+    </Kop>
+    <p class="kaart__intro">{description}</p>
+    <span class="arrow-link kaart__verder" aria-hidden="true">Lees verder <Icon name="arrow" /></span>
+  </div>
+</article>
+
+<style>
+  .kaart {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.15s ease;
+  }
+
+  .kaart:hover {
+    background: var(--color-surface-2);
+  }
+
+  .kaart:focus-within {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 2px;
+  }
+
+  .kaart__inhoud {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .kaart__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .kaart__titel {
+    font-size: clamp(20px, 0.5vw + 1rem, 22px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .kaart--groot .kaart__titel {
+    font-size: clamp(24px, 1vw + 1rem, 28px);
+  }
+
+  .kaart__titel a {
+    color: var(--color-ink);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* De hele kaart is klikbaar via de link in de titel. */
+  .kaart__titel a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .kaart__titel a:focus-visible {
+    outline: none;
+  }
+
+  .kaart__intro {
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .kaart__verder {
+    margin-top: auto;
+    padding-top: 8px;
+  }
+
+  .kaart:hover .kaart__verder {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>
