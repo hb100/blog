@@ -1,0 +1,150 @@
+# Instellingen voor Pages CMS (https://app.pagescms.org)
+# Hiermee bewerk je artikelen en teksten in de browser.
+
+media:
+  input: src/assets/images
+  output: ../../assets/images
+  categories: [image]
+  rename: safe
+
+content:
+  - name: posts
+    label: Artikelen
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      fields: [title, date, topics, featured]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: description
+        label: Beschrijving
+        description: Eén of twee zinnen. Staat onder de titel, op de kaartjes en in Google.
+        type: text
+        required: true
+      - name: date
+        label: Datum
+        type: date
+        required: true
+      - name: topics
+        label: Onderwerpen
+        type: select
+        required: true
+        options:
+          multiple: true
+          values: [Home Assistant, Data, Marketing, Fintech]
+      - name: cover
+        label: Omslagafbeelding
+        description: Liefst minstens 1200 pixels breed.
+        type: image
+      - name: coverAlt
+        label: Beschrijving van de omslagafbeelding
+        description: Wat staat erop? Voor mensen die de afbeelding niet kunnen zien.
+        type: string
+      - name: featured
+        label: Uitgelicht op de homepage
+        type: boolean
+        default: false
+      - name: inHetKort
+        label: In het kort
+        type: object
+        fields:
+          - name: doel
+            label: Doel
+            type: string
+          - name: tools
+            label: Tools
+            type: string
+          - name: tijd
+            label: Tijd
+            type: string
+          - name: kosten
+            label: Kosten
+            type: string
+      - name: watIkLeerde
+        label: Wat ik leerde
+        description: Eén korte les. Verschijnt als groen blok aan het eind van het artikel.
+        type: text
+      - name: body
+        label: Tekst
+        type: rich-text
+
+  - name: home
+    label: Homepage
+    type: file
+    path: src/content/instellingen/home.yml
+    format: yaml
+    fields:
+      - name: label
+        label: Klein label boven de titel
+        type: string
+      - name: titel
+        label: Titel
+        type: string
+      - name: intro
+        label: Intro
+        type: text
+      - name: knopTekst
+        label: Tekst op de knop
+        type: string
+      - name: overMijTitel
+        label: Titel van het blok "Over mij"
+        type: string
+      - name: overMijTekst
+        label: Tekst van het blok "Over mij"
+        type: text
+
+  - name: over-mij
+    label: Pagina "Over mij"
+    type: file
+    path: src/content/paginas/over-mij.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: description
+        label: Beschrijving (voor Google)
+        type: text
+        required: true
+      - name: body
+        label: Tekst
+        type: rich-text
+
+  - name: site
+    label: Mijn gegevens
+    type: file
+    path: src/content/instellingen/site.yml
+    format: yaml
+    fields:
+      - name: naam
+        label: Naam
+        description: Staat linksboven op elke pagina en in de footer.
+        type: string
+      - name: tagline
+        label: Korte zin in de footer
+        type: string
+      - name: korteBio
+        label: Korte bio onder artikelen
+        type: string
+      - name: foto
+        label: Foto
+        description: Vierkant werkt het best.
+        type: image
+      - name: linkedin
+        label: LinkedIn-link
+        type: string
+      - name: contact
+        label: Contact
+        description: Een e-mailadres of een link.
+        type: string

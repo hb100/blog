@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  image?: ImageMetadata;
+  alt?: string;
+  sizes: string;
+  widths: number[];
+  loading?: 'eager' | 'lazy';
+  class?: string;
+}
+
+const { image, alt = '', sizes, widths, loading = 'lazy', class: className } = Astro.props;
+
+// Kleine afbeeldingen (zoals een logo) rekken we niet op: die staan gecentreerd op een vlak.
+const klein = image ? image.width < 900 : false;
+const bruikbareBreedtes = image ? widths.filter((b) => b <= image.width) : [];
+if (image && bruikbareBreedtes.length === 0) bruikbareBreedtes.push(image.width);
+---
+
+<div class:list={['cover', klein && 'cover--klein', className]}>
+  {image && (
+    <Image
+      src={image}
+      alt={alt}
+      widths={bruikbareBreedtes}
+      sizes={klein ? `${Math.min(image.width, 480)}px` : sizes}
+      loading={loading}
+      style={klein ? `max-width:${image.width}px;max-height:${image.height}px` : undefined}
+      fetchpriority={loading === 'eager' ? 'high' : undefined}
+    />
+  )}
+</div>
+
+<style>
+  .cover {
+    position: relative;
+    background: var(--color-surface-2);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cover--klein img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+  }
+</style>

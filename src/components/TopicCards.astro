@@ -1,0 +1,96 @@
+---
+import { onderwerpen } from '../lib/onderwerpen';
+
+interface Props {
+  aantallen?: Record<string, number>;
+}
+const { aantallen } = Astro.props;
+---
+
+<ul class="onderwerpkaarten">
+  {onderwerpen.map((o) => (
+    <li>
+      <a class="onderwerpkaart" href={`/onderwerpen/${o.slug}/`}>
+        <span class="onderwerpkaart__stip" aria-hidden="true"></span>
+        <span class="onderwerpkaart__naam">{o.naam}</span>
+        <span class="onderwerpkaart__tekst">{o.omschrijving}</span>
+        {aantallen && (
+          <span class="onderwerpkaart__aantal">
+            {aantallen[o.naam] ?? 0} {(aantallen[o.naam] ?? 0) === 1 ? 'artikel' : 'artikelen'}
+          </span>
+        )}
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .onderwerpkaarten {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  @media (min-width: 900px) {
+    .onderwerpkaarten {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+  }
+
+  .onderwerpkaart {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 100%;
+    padding: 20px 16px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .onderwerpkaart:hover {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border-color: var(--color-surface-2);
+  }
+
+  .onderwerpkaart__stip {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-teal);
+    margin-bottom: 4px;
+  }
+
+  .onderwerpkaart__naam {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.3;
+  }
+
+  .onderwerpkaart:hover .onderwerpkaart__naam {
+    color: var(--color-cobalt-hover);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .onderwerpkaart__tekst {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .onderwerpkaart__aantal {
+    margin-top: 8px;
+    color: var(--color-teal-ink);
+    font-size: var(--text-meta);
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,185 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  naam: string;
+}
+const { naam } = Astro.props;
+
+const links = [
+  { href: '/artikelen/', label: 'Artikelen' },
+  { href: '/onderwerpen/', label: 'Onderwerpen' },
+  { href: '/over-mij/', label: 'Over mij' },
+];
+const pad = Astro.url.pathname;
+const isActief = (href: string) => pad.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__naam" href="/">{naam}</a>
+
+    <button class="menu-knop" type="button" aria-expanded="false" aria-controls="hoofdmenu" hidden>
+      <span class="menu-knop__open"><Icon name="menu" size={20} /></span>
+      <span class="menu-knop__dicht"><Icon name="close" size={20} /></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+
+    <nav id="hoofdmenu" class="hoofdmenu" aria-label="Hoofdmenu">
+      <ul>
+        {links.map((link) => (
+          <li>
+            <a href={link.href} aria-current={isActief(link.href) ? 'page' : undefined}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const knop = document.querySelector<HTMLButtonElement>('.menu-knop');
+  const menu = document.getElementById('hoofdmenu');
+  if (knop && menu) {
+    // Zonder JavaScript staat het menu gewoon open; met JavaScript klap je het uit.
+    knop.hidden = false;
+    menu.dataset.js = 'true';
+    const zet = (open: boolean) => {
+      knop.setAttribute('aria-expanded', String(open));
+      menu.dataset.open = String(open);
+    };
+    knop.addEventListener('click', () => zet(knop.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && knop.getAttribute('aria-expanded') === 'true') {
+        zet(false);
+        knop.focus();
+      }
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+    background: var(--color-canvas);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 72px;
+    gap: 0 16px;
+  }
+
+  .site-header__naam {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: none;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-header__naam:hover {
+    color: var(--color-ink);
+  }
+
+  .menu-knop {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    color: var(--color-ink);
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-knop[hidden] {
+    display: none;
+  }
+
+  .menu-knop__dicht,
+  .menu-knop[aria-expanded='true'] .menu-knop__open {
+    display: none;
+  }
+
+  .menu-knop[aria-expanded='true'] .menu-knop__dicht {
+    display: block;
+  }
+
+  .menu-knop__open {
+    display: block;
+  }
+
+  .hoofdmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4px 24px;
+    flex-wrap: wrap;
+  }
+
+  .hoofdmenu a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .hoofdmenu a:hover,
+  .hoofdmenu a[aria-current='page'] {
+    color: var(--color-cobalt-hover);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Mobiel met JavaScript: uitklapmenu */
+  @media (max-width: 767px) {
+    .hoofdmenu {
+      width: 100%;
+      padding-bottom: 12px;
+    }
+
+    .hoofdmenu[data-js='true'] {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      z-index: 20;
+      background: var(--color-canvas);
+      border-bottom: 1px solid var(--color-line);
+      box-shadow: var(--shadow-menu);
+      padding: 8px var(--space-page-x) 16px;
+    }
+
+    .hoofdmenu[data-open='true'] {
+      display: block;
+    }
+
+    .hoofdmenu[data-js='true'] ul {
+      flex-direction: column;
+    }
+
+    .hoofdmenu[data-js='true'] a {
+      min-height: 48px;
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-knop {
+      display: none !important;
+    }
+  }
+</style>

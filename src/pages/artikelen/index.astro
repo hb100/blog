@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleIndex from '../../components/ArticleIndex.astro';
+import { alleArtikelen } from '../../lib/artikelen';
+
+const artikelen = await alleArtikelen();
+---
+
+<BaseLayout title="Artikelen" description="Alle artikelen over Home Assistant, data, marketing en fintech, nieuwste eerst.">
+  <div class="container pagina">
+    <header class="pagina__kop">
+      <h1>Artikelen</h1>
+      <p class="intro">Alles wat ik heb opgeschreven, nieuwste eerst. Kies een onderwerp om te filteren.</p>
+    </header>
+    <ArticleIndex artikelen={artikelen} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleIndex from '../../components/ArticleIndex.astro';
+import { alleArtikelen } from '../../lib/artikelen';
+import { onderwerpen, type OnderwerpInfo } from '../../lib/onderwerpen';
+
+export function getStaticPaths() {
+  return onderwerpen.map((onderwerp) => ({ params: { onderwerp: onderwerp.slug }, props: { onderwerp } }));
+}
+
+const { onderwerp } = Astro.props as { onderwerp: OnderwerpInfo };
+const artikelen = (await alleArtikelen()).filter((a) => a.data.topics.includes(onderwerp.naam));
+---
+
+<BaseLayout title={onderwerp.naam} description={`Artikelen over ${onderwerp.naam}: ${onderwerp.omschrijving.toLowerCase()}.`}>
+  <div class="container pagina">
+    <header class="pagina__kop">
+      <p class="meta-label">Onderwerp</p>
+      <h1>{onderwerp.naam}</h1>
+      <p class="intro">{onderwerp.omschrijving}.</p>
+    </header>
+    <ArticleIndex artikelen={artikelen} actief={onderwerp.naam} />
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-top: 12px;
+  }
+</style>

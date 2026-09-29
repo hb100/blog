@@ -1,0 +1,39 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Avatar from '../components/Avatar.astro';
+import { siteInstellingen } from '../lib/instellingen';
+
+const pagina = await getEntry('paginas', 'over-mij');
+if (!pagina) throw new Error('src/content/paginas/over-mij.md ontbreekt');
+const { Content } = await render(pagina);
+const site = await siteInstellingen();
+---
+
+<BaseLayout title={pagina.data.title} description={pagina.data.description} image={site.foto}>
+  <div class="container pagina">
+    <header class="pagina__kop over-mij__kop">
+      <Avatar foto={site.foto} naam={site.naam} grootte={120} />
+      <h1>{pagina.data.title}</h1>
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    {site.linkedin && (
+      <p class="over-mij__link"><a class="text-link" href={site.linkedin} rel="me">Volg me op LinkedIn</a></p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .over-mij__kop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .over-mij__link {
+    margin-top: 32px;
+  }
+</style>

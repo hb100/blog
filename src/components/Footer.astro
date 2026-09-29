@@ -1,0 +1,50 @@
+---
+import { siteInstellingen } from '../lib/instellingen';
+const site = await siteInstellingen();
+const contactHref = site.contact?.includes('@') && !site.contact.startsWith('mailto:') ? `mailto:${site.contact}` : site.contact;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="site-footer__naam">{site.naam}</p>
+    {site.tagline && <p class="site-footer__tagline">{site.tagline}</p>}
+    <ul class="site-footer__links">
+      {site.linkedin && <li><a href={site.linkedin} rel="me">LinkedIn</a></li>}
+      <li><a href="/rss.xml">RSS</a></li>
+      {contactHref && <li><a href={contactHref}>Contact</a></li>}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-surface);
+    margin-top: var(--space-section);
+    padding-block: 48px;
+  }
+
+  .site-footer__naam {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .site-footer__tagline {
+    color: var(--color-muted);
+    margin-top: 8px;
+  }
+
+  .site-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  .site-footer__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+</style>

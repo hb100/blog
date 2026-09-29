@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicCards from '../../components/TopicCards.astro';
+import { alleArtikelen } from '../../lib/artikelen';
+import { onderwerpen } from '../../lib/onderwerpen';
+
+const artikelen = await alleArtikelen();
+const aantallen = Object.fromEntries(
+  onderwerpen.map((o) => [o.naam, artikelen.filter((a) => a.data.topics.includes(o.naam)).length]),
+);
+---
+
+<BaseLayout title="Onderwerpen" description="De vier onderwerpen van deze blog: Home Assistant, data, marketing en fintech.">
+  <div class="container pagina">
+    <header class="pagina__kop">
+      <h1>Onderwerpen</h1>
+      <p class="intro">Waar ik over schrijf. Kies een onderwerp om de artikelen te zien.</p>
+    </header>
+  </div>
+  <div class="container">
+    <TopicCards aantallen={aantallen} />
+  </div>
+</BaseLayout>
